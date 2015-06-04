@@ -60,7 +60,7 @@ The technological advances in sequencing technology in the recent decade have ma
 Metagenomics is the analysis of genetic material extracted from environmental samples or extracted from mixtures of organisms.  Two general approaches are available, targeted gene sequencing and random "shotgun" sequencing.    Targeted sequencing amplifies gene fragments of interest using PCR primers corresponding to conserved regions of selected genes.   Subsets of the sequence of the prokaryotic  rRNA 16S subunit, the internal transcribed spacer (ITS) in fungi, functional genes of interest to oxidation-reduction metabolism(NifH, AmoA), and conserved non-RNA phylogenetic marker genes (XXX) are all suitable.  The 16S rRNA gene has proven most popular for surveying the composition of microbial communities, and as one of the genes that has been under investigation for the longest, its primers and sequences have been the most studied and have the largest number of database sequences.
 
 Random, called "shotgun" sequencing provides unaligned samples from each organism's thousands of genes, rather than amplifying a single gene per organism or organismal type.  This increases the complexity of the sequencing product several thousandfold, and as a result, much greater per-sample sequencing effort is required.
-This higher sequencing effort has meant that environmental shotgun sequencing has been enabled disproportionately by low-cost sequencing technologies, and as a consequence the total amount of shotgun sequence data has XXX HISTORICALGRAPH.
+This higher sequencing effort has meant that environmental shotgun sequencing has been enabled disproportionately by low-cost sequencing technologies, and as a consequence the total amount of shotgun metagenomic sequence data has been rising rapidly.   The Sequence Read Archive has (as of May 2015) 34 Terabases of sequence data tagged as metagenomic in origin, 
 Gigabase to few-tens-of-gigabase samples have been fashionable and common.  Sequencing single samples to depths of a hundred gigabases or greater have been uncommon but not unheard of.
 
 Generally, researchers are interested in the effect of external variables on the composition of microbial communities.  For both the targeted-gene and shotgun approaches, a vector of inferred relative taxonomic abundances is produced.  For shotgun sequencing, the sequences can be further interpreted as relative abundances of fragments from different functional classes of genes.  Analytical approaches that use additional information (from comparative genomics, or from chemical reaction networks) to extend the inferred profiles are in current use.  (XXX examples, PRMT, HUMANN's operon-exploit)
@@ -110,8 +110,8 @@ Iontorrent has been applied successfully to targeted-gene metagenomic analysis; 
 \label{subsec:2}
 
 
-Auer and XXX suggest block designs to control for lane effects, and additional controls for barcode effects can be imagined.  Modern sequencers have batch effects that can bias end results, but these seem to be related to the overall protocol, including fragmentation methods and PCR conditions, not to specific lanes simultaneously sequenced on an instrument.    An instrument has a chance of having some of the output fail to produce usable or high-quality output; a single lane can fail, or fail to produce high sequence quality or quantity, at the same time that adjacent lanes produce good sequence.
-The principal benefit of a design that spreads samples across several lanes is that this design provides  insurance against a technical failure that is confined to a single lane.  If one lane fails, a loss of one eighth of the sequencing depth is less disruptive to experimental design that the loss of data for one eighth of the samples.   Block randomization is clearly indicated, however, if the sequencing protocol, whether extraction, template construction or purification, or sequencing chemistry or platform changes.
+Auer and XXX suggest block designs to control for lane effects, and additional controls for barcode effects can be imagined.  Modern sequencers have batch effects that can bias end results, but these seem to be related to the library preparation protocol, including fragmentation method and PCR conditions, rather than lanes or barcodes simultaneously sequenced on an instrument.    An instrument has a chance of having some of the output fail to produce usable or high-quality output; a single lane can fail, or fail to produce high sequence quality or quantity, at the same time that adjacent lanes produce good sequence.
+The principal benefit of a design that spreads samples across several lanes is that this design provides  insurance against a technical failure that is confined to a single lane.  If one lane fails, a loss of one eighth of the sequencing depth is less disruptive to experimental design that the loss of data for one eighth of the samples.   Block randomization is clearly indicated, however, if the sequencing protocol, whether extraction, template construction or purification, sequencing chemistry, or platform is changed during an experimental campagin.
 
 Sometimes* some sequencing samples fail.   Despite the best efforts, some samples fail to cluster, and some sequencing runs suffer problems that result in unusable sequence data.  It is essential to plan for the possibility
 * More often than anyone wants
@@ -119,17 +119,18 @@ Sometimes* some sequencing samples fail.   Despite the best efforts, some sample
 \subsection{Sample requirements }
 \label{subsec:4}
 %
-When creating metagenomic sequencing libraries the quality and quantity of the genetic material to be sequence is of great importance. The quantity of material varies from method to method and can be anywhere from 1~ng – 1ug of material. It is important to make sure that the amount of genetic material available for library preparation falls within the range given by the kits protocol.
+% When creating metagenomic sequencing libraries the quality and quantity of the genetic material to be sequence is of great importance. 
+Input DNA quantities for library preparation kits range from 1~ng to  1ug of material. It is important to make sure that the amount of genetic material available for library preparation falls within the range given by the kit's protocol.
 %
 More important is the quality of the nucleic acids. Even if a researcher has ample genetic material, if the material is not of good quality a robust library often cannot be made. Good quality starts from sample collection and will be affected by the samples environment. For instance, samples taken from hot or acid rich environments will be innately lower in quality compared to a sample taken from a relatively cold or more neutral environment.
 %
 The proper storage of a sample also plays a huge role in overall sample quality. We recommend storing samples at -80°C as soon as possible after collection and avoiding free-thaw cycles. Steps used to maintain high quality through the extraction process are detailed below.
 %
-The composition of the microbial communities in environmental samples can shift depending on the conditions of sample storage. Storage variables such as duration of time and temperature can drastically affect the abundance of different members in the communities and create biases. Bray-Curtis analysis can be used to determine how these communities shift (Rubin et al., 2013). We recommend that extraction of the genetic material happen as soon as possible after sample collection to reduce storage associated community shifts. Alternately, immediately freezing samples at    -80°C after collection can reduce community shifts
+The composition of the microbial communities in environmental samples can shift depending on the conditions of sample storage. Storage variables such as duration of time and temperature can drastically affect the abundance of different members in the communities and create biases. We recommend that extraction of the genetic material happen as soon as possible after sample collection to reduce storage associated community shifts. Alternately, immediately freezing samples at -80°C after collection can reduce shifts and preserve alpha diversity.\cite{Rubin}
 %
 To assess the quantity of a sample after extraction we recommend Invitrogen’s Qubit Fluorometer. The qubit determines the starting concentrations of given samples by utilizing a fluorescent dye that binds to nucleic acids for quantification. We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA.
 %
-To assess the quality of the genetic material we recommend using Agilent’s 2100 Bioanalyzer or an agrose gel to view the genetic material. Generally, high quality genetic material destined for metagenomic research will be free of any fragments below 100-200~bp.  If the number of fragments 200~bp out-number the rest this is an indication of fragmentation and this low quality genetic material.
+To assess the quality of the genetic material we recommend using Agilent’s 2100 Bioanalyzer or an agrose gel to view the genetic material. Generally, high quality genetic material destined for metagenomic research will be free of any fragments below 100-200~bp.  If the number of fragments 200~bp outnumber the rest this is an indication of overfragmentation or low input quality.
 
 \section{Wetlab protocol}
 There are two main metagenomic library types/kits that have been tested thoroughly and are confidently recommend for metagenomic sequencing.  These two types are the TruSeq and the Nextera, both from Illumina, Inc.(San Diego, California). These two library types differ in their approach in two key components of metagenomic library generation: the fragmenting or shearing of the input material and the ligation of sequencing adaptors and identifying barcodes. 
@@ -137,27 +138,19 @@ Multiple factors may impact the selection of a kit for metagenomic library gener
 Detailed below are protocols that address the creation of Nextera and TruSeq metagenomic libraries. 
 
 Materials
-\paragraph{Kits, Reagents, and Consumables}
+
 \begin{enumerate}
-\item{    Qubit HS Assay, for Invitrogen’s Qubit Fluorometer}
-\item{       Agencourt Ampure XP Beads}
-\item{       microTube AFA Fiber Pre-Slit with Snap-Cap 6X16mm, for Covaris S-series}
-\item{       Illumina’s TruSeq PCR-free Sample Prep*}
-\item{       Illumina’s Nano DNA Sample Prep Kits*}
-\item{       Kapa Biosystems Library Amplification kits*}
-\item{       Wafergen’s PrepX Complete ILMN DNA library Kits}
-\item{       Absolute Ethanol}
-\item{      Agarose (select agarose according to DNA fragment size)*}
-\item{      Life Technologies’s E-Gels (1.5\%)*}
-\item{      Blue Pippin Prep DNA Gel Cassettes 3\%, 2\%, 1.5\%, or 0.75\%}
-\item{    Bio-O Scientific’s Nextflex DNA Barcodes and PCR mixture}
-\item{      Illumina’s Nextera DNA kit}
-\item{      ZymoTM Purification Kit (ZR-96 DNA clean and ConcentratorTM-5)}
-\item{    Agilent DNA HS kit}
-\item{      MoBio PowerSoil DNA isolation Kit}
-\item{      Smart Spatula}
+\item{1.      Bring the RSB to room temperature.}
+\item{2.      Add 180~ul of Zymo DNA binding buffer to each sample well and pipette up and down 10 times to mix.}
+\item{3.       Take the Zymo-Spin plate and place it on the included collection plate. Transfer the mixtures from step 2 to the corresponding wells on the included spin plate and centrifuge at 1,300~g for 2 minutes at 20°C.}
+\item{4.      Discard the flow-through.}
+\item{5.      Wash sample wells in the Zymo-spin plate with 300~ul of wash buffer and centrifuge at 1,300 xg for 2 minutes at 20°C.}
+\item{6.      Discard the flow-through.}
+\item{7.      Repeat steps 5 and 6 for a total of 2 washes.}
+\item{8.      Centrifuge again at 1,300 xg for 2 minutes at 20°C to ensure no residual wash buffer. Discard flow-through.}
+\item{9.      Take the zymo-spin plate and place it in a fresh collection plate.}
+\item{10.     Add 25~ul of RSB into each sample well and Centrifuge at 1,300 xg for 2 minutes at 20°C. Set the collection plate aside on ice.}
 \end{enumerate}
-* Indicates an alternative protocol/kit to the recommended one
 
 \paragraph{Equipment}
 \begin{enumerate}
@@ -173,8 +166,11 @@ Materials
 \subsection{Library Types}
 For the generation of metagenomic libraries, we recommend two main types: TruSeq libraries and Nextera libraries.  TruSeq libraries have been on the market longer, so there are more kits and biotechnology companies that cater to their creation. 
 Nextera libraries are newer and, to date can only be made with Illumina reagent kits.  
-The main different between Nextera libraries and TruSeq libraries is the fragmentation procedure. 
-To generate any metagenomic library the DNA much be sheared to create blunt ends that sequencing adaptors can ligate to. TruSeq library generation relies on mechanical sonication to fragment DNA. Nextera library generation uses an engineered enzyme to simultaneously fragment and tag input material. Based on these differences. Further, when creating a TruSeq library as compared to a Nextera library, the user has greater control over the insert size of library fragments.  Increased control of insert size can be especially useful with certain bioinformatics platforms. TruSeq and Nextera library preparation also varies in regards to the amount of input material needed. TruSeq library generation generally requires 500-1,000~ng of input material, while Nextera needs only 50~ng. Generation of Nextera libraries is particularly helpful with low biomass samples.
+The main difference between Nextera libraries and TruSeq libraries is the fragmentation procedure. 
+TruSeq library generation uses mechanical shearing in a sonicator to fragment the DNA. 
+Nextera library generation uses an engineered enzyme to simultaneously fragment and ligate adapters to the input material. 
+When creating a TruSeq library as compared to a Nextera library, the user has greater control over the insert size of library fragments.  
+TruSeq and Nextera library preparation also varies in regards to the amount of input material needed. TruSeq library generation generally requires 500-1,000~ng of input material, while Nextera needs only 50~ng. Generation of Nextera libraries is particularly helpful with low biomass samples.
 
 \subsection{Positive and negative controls }
 
@@ -249,35 +245,7 @@ We recommend using Illumina standard indexes (Table 2) when generating TruSeq li
 \subsubsection{End repair, A-tailing, and Adaptor Ligation on the Apollo 324}
 
 After samples have been sheared, there are several different kits that will enact end-repair, and ligate on A-tails and Adaptors. We recommend Illumina’s TruSeq PCR free Sample Prep, Illumina’s Nano DNA Sample Prep Kits, Kapa Biosystems Library Amplification kits, or Wafergen’s PrepX Complete ILMN DNA library Kits. Each of the following kits uses the same basic pipeline of end-repair, a-tail ligation, and adaptor ligation and each will produce high quality libraries. The kits differ by the amount of input material they can handle, the insert size ranges they can produce, the time investment needed to complete the protocol, and the price. We prefer the Wafergen PrepX Complete ILMN DNA library kit as it has the fastest completion time and it is completed on an automated system allowing for less human error and increased reproducibility. It should be noted that the Kapa Biosystems Library Amplification kits can also be used on Wafergen’s Apollo 324 system. The following protocol pertains only to using Wafergen’s PrepX Complete ILMN DNA library Kits on Wafergen’s Apollo 324 system.
-\begin{enumerate}
-\item{1.      Take the product from the shearing protocol and bring all samples to 15~ul with Agencourt Ampure XP Beads at a 1.8X ratio.}
-\item{a.      Transfer the samples into separate microcentrifuge tubes or plate wells from the covaris microTubes}
-\item{b.      Bring the AMPure XP Beads to room temperature and vortex then until they are resuspended.}
-\item{c.      Add 1.8Xul of the mixed AMPure XP Beads to each sample. Mix thoroughly by gently pipetting the entire volume 10 times.}
-\item{d.      Incubate at room temperature for 15 minutes. During incubation, prepare an 80\% ethanol solution.}
-\item{e.      Place the tubes or plate on the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear, and the beads are magnetically separated.}
-\item{f.      Remove and discard the supernatant from each tube. Do not disturb the beads.}
-\item{g.      With the samples still on the magnetic stand, add 200~ul of freshly prepared 80\% ethanol to each sample without disturbing the beads.}
-\item{h.      Incubate at room temperature for at least 30 seconds while still on the magnetic stand, then remove and discard all of the supernatant from each tube. Again, do not disturb the beads.}
-\item{i.      Repeat steps 6 and 7 one more time for a total of two 80\% ethanol washes.}
-\item{j.      Allow the samples to air dry on the magnetic stand at room temperature for 15 minutes or until the beads no longer appear wet.}
-\item{k.      Add 15~ul of nuclease-free water to each tube.}
-\item{l.      Thoroughly resuspend the beads by gently pipetting 10 times.}
-\item{m.      Incubate the tubes at room temperature for 2 minutes.}
-\item{n.      Place the tubes back onto the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear.}
-\item{o.      Transfer the clear supernatant from each tube to an appropriate collection tube. Leave at least 1~ul of the supernatant behind to avoid carryover of magnetic beads.}
-\item{2.      Prepare the indexes that have been assigned to each sample.}
-\item{a.      Dilute 2~ul of index from a 25um stock with 13~ul of nuclease-free water in a new PCR-strip tube.}
-\item{3.      Prepare the ligation mix add the following to a new PCR-strip tube:}
-\item{a.      12~ul of T4 Ligase Buffer}
-\item{b.      1~ul of T4 Ligase Enzyme}
-\item{c.      2~ul of nuclease-free water}
-\item{4.      Prepare 70\% Ethanol}
-\item{5.      Chose the ILM program that is closest to the chosen insert size for the given samples. The user can choose from 220~bp, 320~bp, 520~bp, and 870~bp insert sizes.}
-\item{6.      Load consumables, reagents, and samples onto the Apollo 324 following the deck layout given on the Apollo’s screen}
-\item{7.      Let the Apollo’s program run its course. The Apollo 324 will run samples through an end-repair reaction, a-tail ligation reaction, adaptor-ligation reaction, and size-selection reaction.}
-\item{8.      The samples are libraries at this point – aliquot them from the Apollo labeled product tubes into a new plate or micocentrifuge tubes.}
-\end{enumerate}
+
 
 \subsubsection{PCR and Size Selection}
 
@@ -348,32 +316,13 @@ For metagenomic library prep of low biomass samples, we recommend using Illumina
 
 In this step the transposome fragments the DNA while adding adaptor sequences to the ends, allowing it to be amplified by PCR in later steps.
 We recommend the following protocol:
-\begin{enumerate}
-\item{1.      Bring TD, TDE1, and the genomic DNA to room temperature and then store on ice}
-\item{2.      In a 96-well plate, add 20~ul of genomic DNA to each well}
-\item{3.      Add 25~ul of TD buffer followed by 5~ul of TDE1 to each well with a sample, changing tips between samples. Mix well by gently pipetting up and down 10 times.}
-\item{4.      Place the plate on a thermocycler and run the following program:}
-\item{a.      55°C for 5 minutes}
-\item{b.      Hold at 10°C}
-\end{enumerate}
 
 
 \subsubsection{Clean-up of Tagmented DNA}
 
 This step is critical because without it the Nextera transposome can bind tightly to the DNA and will interfere with downstream processing.  We recommend using ZymoTM Purification Kit (ZR-96 D
 NA clean and Concentrator TM-5) for this protocol. We recommend the following protocol:
-\begin{enumerate}
-\item{1.      Bring the RSB to room temperature.}
-\item{2.      Add 180~ul of Zymo DNA binding buffer to each sample well and pipette up and down 10 times to mix.}
-\item{3.       Take the Zymo-Spin plate and place it on the included collection plate. Transfer the mixtures from step 2 to the corresponding wells on the included spin plate and centrifuge at 1,300~g for 2 minutes at 20°C.}
-\item{4.      Discard the flow-through.}
-\item{5.      Wash sample wells in the Zymo-spin plate with 300~ul of wash buffer and centrifuge at 1,300 xg for 2 minutes at 20°C.}
-\item{6.      Discard the flow-through.}
-\item{7.      Repeat steps 5 and 6 for a total of 2 washes.}
-\item{8.      Centrifuge again at 1,300 xg for 2 minutes at 20°C to ensure no residual wash buffer. Discard flow-through.}
-\item{9.      Take the zymo-spin plate and place it in a fresh collection plate.}
-\item{10.     Add 25~ul of RSB into each sample well and Centrifuge at 1,300 xg for 2 minutes at 20°C. Set the collection plate aside on ice.}
-\end{enumerate}
+
 
 \subsubsection{Choosing Adaptors and Multiplexing}
 
@@ -388,37 +337,6 @@ Nextera samples it is important to achieve a red-green channel balance for each 
 
 \subsubsection{PCR Amplification}
 It is critical to use the full amount of recommended input DNA at this step to ensure libraries that produce high quality sequencing results. To complete this step do the following:b\\
-\begin{enumerate}
-\item{1.      Bring the index primers to room temperature}
-\item{2.      Transfer 20~ul of Tagmented DNA to a new 96-well plate}
-\item{3.      Add 5~ul of the chosen i7 index primer to each sample well}
-\item{4.      Add 5~ul of the chosen i5 index primer to each sample well}
-\item{5.      Add 15~ul of NPM to each sample well}
-\item{6.      Add 5~ul of PPC to each sample well}
-\item{7.      Gently pipette up and down 5 times to mix}
-\item{8.      Perform PCR on a thermocycler under the following conditions}
-\item{a.      72°C for 3 minutes}
-\item{b.      5 cycles of}
-\item{i.      98°C for 10 seconds}
-\item{ii.     63°C for 30 seconds}
-\item{iii.    72°C for 3 minutes}
-\item{c.      Hold at 10°C}
-\item{9.      Add 25 ul of AMPure XP Beads}
-\item{10.     Incubate at room temperature for 15 minutes. During incubation, prepare an 80\% ethanol solution.}
-\item{11.     Place the tubes or plate on the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear.}
-\item{12.     Remove and discard the supernatant from each tube. Do not disturb the beads.}
-\item{13.     With the samples still on the magnetic stand, add 200~ul of freshly prepared 80\% ethanol to each sample, without disturbing the beads.}
-\item{14.     Incubate at room temperature for at least 30 seconds while still on the magnetic stand, then remove and discard all of the supernatant from each tube. Again, do not disturb the beads.}
-\item{15.     Repeat steps 6 and 7 one more time for a total of two 80\% ethanol washes.}
-\item{16.     Allow the tubes to air dry on the magnetic stand at room temperature for 15 minutes or until the beads no longer appear wet.}
-\item{17.     Add 31~ul of nuclease-free water to each tube.}
-\item{18.     Thoroughly resuspend the beads by gently pipetting 10 times.}
-\item{19.     Incubate the tubes at room temperature for 2 minutes.}
-\item{20.     Place the tubes back onto the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear.}
-\item{21.     Transfer the clear supernatant from each tube to an appropriate collection tube. Leave at least 1~ul of the supernatant behind to avoid carryover of magnetic beads.}
-\item{22.     Proceed to Final Library Quantification}
-
-\end{enumerate}
 
 \subsection{Final Library Quantification}
 
@@ -440,7 +358,7 @@ Sequencing and Data Analysis
 Nucleic acid sequences determined from environmental samples are difficult to interpret for a variety of reasons, and as a result exploitation of metagenomic shotgun data is computationally expensive compared to the study of model organisms.
 Some parts of microbial genomes evolve quickly and make detection of similarity technically difficult.
 Many environmental microbes and microbial genes lack close relatives in cultured organisms, resulting in large fractions of many environmental samples going unannotated.
-Environmental samples present a formidable inference problem of unraveling unkown mixtures of unkown organisms.  When this problem has been approached, expectation-maximizaiton has been the algorithmic workhorse.
+Environmental samples present a formidable inference problem of unraveling unkown mixtures of unkown organisms.  When this problem has been approached, expectation-maximization has been the algorithmic workhorse.
 Unlike the sequencing of reference organisms, where the complexity of the sequence is limited by the genome of the underlying organism, environmental samples sometimes show diversity whose limits have not yet been circumscribed by obeservations.  This exceedingly high observed sequence diversity makes some datasets fail to compress, and exposes the annotation procedure to gigabases of raw data for annotation.
 
 High-throughput sequencing datasets of this size are large enouh that general-purpose desktop and laptop computers are a bad choice to store, process, and otherwise work with sequence data. 
@@ -474,7 +392,7 @@ For some protocols, these sequneces are intended to appear in the output, but in
 These contaminants can include as few as 30~bp and as much as 150~bp of distinct sequence.   Removing these "adapter" sequences is not computationally expensive, but there are no generally accepted recommendations on how much contamination is acceptable.
 Some published datasets, both metagenomic and genome sequencing, have large fractions of reads that contain uninformative adapter sequences, and it is likely that these adapter sequences are more problematic for assembly than for recruitment or annotation.
 
-        The current generation of seuqnecing platforms produces reads with error rates that vary as a funciton of position in the read.  The deterioration of sequenence quality follows from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules, and perhaps due to deterioration of the reagent stocks.   Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from two separated parts of the templates.  Careful selection of the size of the template molecules further permits reads to overlap.  Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construciton of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing.  Read merging is not computationally expensive, and when applied to well constructed libraries more than 90\% of paired reads can be found to overlap.  Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.
+        The current generation of seuqnecing platforms produces reads with error rates that vary as a function of position in the read.  The deterioration of sequence quality follows from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules, and perhaps due to deterioration of the reagent stocks.   Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from two separated parts of the templates.  Careful selection of the size of the template molecules further permits reads to overlap.  Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing.  Read merging is not computationally expensive, and when applied to well constructed libraries more than 90\% of paired reads can be found to overlap.  Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.
 
 Figure OVERLAP
         It is possible to get more than 90\% of the reads in a metagenomic sequencing run to overlap; this usually requires deliberate size selection of the post-adapter-ligation templates.   Templates that are too short result in smaller than expected composite reads; templates that are too long result in non-overlapping sequences.   When templates less than half the target length, shorter than the read length, occur in a sequencing lirary, the sequencer sequences the template and a piece of the normally unsequenced adapter on each end--resulting in reads that overlap for most of the beginning of the sequences, but that have (different) aritficial barcode sequences at their ends.   These sequences can be recovered bioinformatically, but are of low value
@@ -490,15 +408,13 @@ Researchers usually get better results by sharing research goals, hypotheses, an
 \section{Effective results reporting }
 \label{sec:5}
 
-The output from an Illumina Next Generation sequencing run is ultimately a fastq.qz file. Sequences with low quality scores are filtered out before analysis. Metagenomes will be analyzed using the available online resources (e.g. IMG/M, MGRAST, CAMERA, EBIs Metagenomics portal, etc.) providing annotation by comparing transcripts to different functional gene databases (e.g. using BLAST to assign functions against M5NR, SFams and SEED). For more detailed descriptions of potential functional pipelines and analyses of these data see Thomas 2012, Edwards et al. 2008, and Myer et al. 2015.
+The output from an Illumina Next Generation sequencing run is ultimately a fastq.qz file. Sequences with low quality scores are filtered out before analysis. Metagenomes will be analyzed using the available online resources (e.g. IMG/M, MGRAST, CAMERA, EBIs Metagenomics portal, etc.) providing annotation by comparing transcripts to different functional gene databases (e.g. using BLAST to assign functions against M5NR, SFams and SEED). For more detailed descriptions of potential functional pipelines and analyses of these data see \cite{Thomas2012}, \cite{MG-RAST} \cite{API}
 
         The results of closed-reference annotation are per-sample "feature vectors" representing the number of observations of biological molecules of a given type.  The number of dimensions of this vector can range from a handful (classifying reads merely by estimated domain) to millions (counting each database sequnece as a distinct potential unit of observation), and in general the number of observable features far exceeds the number of samples.
 
-        Raw shotgun metagenomics datasets range from hundreds of megabytes to hundreds of gigabytes in size.  Since 2009 the Sequence Read Archive, maintained by the International Nucleotide Sequence Databases (INSDC), has archived raw data from sequencing runs with mandatory metadata on protocol, samples, and sequencing.  The archive issues accession numbers for individual samples, individual instrument runs, collections of runs with the same protocol, collections of runs with the same purpose but different protocols, and collections of sequencing experiemnts with different samples.
+        Raw shotgun metagenomics datasets range from hundreds of megabytes to hundreds of gigabytes in size.  Since 2009 the Sequence Read Archive, maintained by the International Nucleotide Sequence Databases (INSDC), has archived raw data from sequencing runs with mandatory metadata on protocol, sampling, and sequencing.  The archive issues accession numbers for individual samples, individual instrument runs, collections of runs with the same protocol, collections of runs with the same purpose but different protocols, and collections of sequencing experiemnts with different samples.  
 In addition to the public archives, some annotation services (MG-RAST, iMicrobe, and IMG/M) host metagenomic sequence data and annotation results and allow making public raw and value-added sequence data.    NCBI's Whole Genome Shotgun archive accepts assembled contigs in FASTA format if sufficent metadata are provided, and is one option for making contigs available for later use for comparative study.
 Some consortia have published their value-added data products (for example annotation tables, results from assemblies) separately from the public sequence archives.
-
-
 
 \subsection{Repositories}
 \label{sec:5repos}
