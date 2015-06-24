@@ -72,7 +72,7 @@
 }
 {\info
 {\title Original file was metagenomics.tex}
-{\doccomm Created using latex2rtf 2.3.8 r1240 (released June 16 2014) on Fri Jun  5 16:41:35 2015
+{\doccomm Created using latex2rtf 2.3.8 r1240 (released June 16 2014) on Wed Jun 24 16:36:24 2015
 }
 }
 {\footer\pard\plain\f0\fs20\qc\chpgn\par}
@@ -83,168 +83,163 @@
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 { Abstract summarizes the paper in a 10\endash 15 lines for indexing, discovery, and marketing}\par
 \pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb240 \fi0 {\*\bkmkstart BMsec_1}1{\*\bkmkend BMsec_1}  The technology\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The technological advances in sequencing technology in the recent decade have made determining the sequence nucleic acid polymers affordable and widespread. While the study of variations in the genomes of model organisms including humans is a rich and fruitful area of investigation, microorganisms have vastly greater numbers and sequence diversity than macroorganisms. Sequencing of DNA from environmental samples has become a fast-growing application of sequencing technology.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Metagenomics is the analysis of genetic material extracted from environmental samples or extracted from mixtures of organisms. Two general approaches are available, targeted gene sequencing and random "shotgun" sequencing. Targeted sequencing amplifies gene fragments of interest using PCR primers corresponding to conserved regions of selected genes. Subsets of the sequence of the prokaryotic rRNA 16S subunit, the internal transcribed spacer (ITS) in fungi, functional genes of interest to oxidation-reduction metabolism(NifH, AmoA), and conserved non-RNA phylogenetic marker genes (XXX) are all suitable. The 16S rRNA gene has proven most popular for surveying the composition of microbial communities, and as one of the genes that has been under investigation for the longest, its primers and sequences have been the most studied and have the largest number of database sequences.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Metagenomics is the analysis of genetic material extracted from environmental samples or extracted from mixtures of organisms. Two general approaches are available, targeted gene sequencing and random "shotgun" sequencing. Targeted sequencing amplifies gene fragments of interest using PCR primers corresponding to conserved regions of selected genes. Subsets of the sequence of the prokaryotic rRNA 16S subunit, the internal transcribed spacer (ITS) in fungi, functional genes of interest to oxidation-reduction metabolism(NifH, AmoA), and conserved non-RNA phylogenetic marker genes are all suitable. The 16S rRNA gene has proven most popular for surveying the composition of microbial communities, and as one of the genes that has been under investigation for the longest, its primers and sequences have been the most studied and have the largest number of database sequences, and protocols for high-throughput sample preparation are available.
+[{\field{\*\fldinst{\lang1024 REF BIB_Caporaso2012Ultrahighthroughput \\* MERGEFORMAT }}{\fldrslt{2}}}
+]\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Random, called "shotgun" sequencing provides unaligned samples from each organism\rquote s thousands of genes, rather than amplifying a single gene per organism or organismal type. This increases the complexity of the sequencing data product several thousandfold, and as a result, much greater per-sample sequencing effort is required. This higher sequencing effort has meant that environmental shotgun sequencing has been enabled disproportionately by low-cost sequencing technologies, and as a consequence the total amount of shotgun metagenomic sequence data has been rising rapidly. The Sequence Read Archive has (as of May 2015) 34 Terabases of sequence data tagged as metagenomic in origin; IMG/M and MG-RAST claim to have 4.5 and 76 {{\field{\*\fldinst{ EQ {\u215*}10\\s\\up5({\fs16 12})}}{\fldrslt }}
 }\~bp respectively. Most metagenomic shotgun datasets at present have between a gigabase and a few-tens-of-gigabases sequencing effort. Sequencing single samples to depths of a hundred gigabases or greater have been uncommon but not unheard of.\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Generally, researchers are interested in the effect of external (non-sequence derived) variables on the composition of microbial communities. For both the targeted-gene and shotgun approaches, a vector of inferred relative taxonomic abundances is produced. For shotgun sequencing, the sequences can be further interpreted as relative abundances of fragments from different functional classes of genes. Analytical approaches that use additional information (from comparative genomics, or from chemical reaction networks) to extend the inferred profiles are in current use. \par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Finally, we can confidently recommend engaging the specialists in the wetlab and in computational analysis early in the sequencing process; many steps along the sample- and data- handling path have different sensitivities and different efficiencies for different sorts of target data; DNA handling and DNA processing technicians can only help if they are informed about the purpose of the experiment, the type of experimental design, and the relevant sampling characteristics. \par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 {\*\bkmkstart BMsubsec_2}1.1{\*\bkmkend BMsubsec_2}  Sample replicates\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The general aspects of experimental design for metagenomics are similar to those for RNA-seq experiments, where block experimental design and at least 5-fold biological replication are recommended. For experiments requiring shotgun sequencing, the relationship between dynamic range and sample number is the principal design constraint. 
-[{\field{\*\fldinst{\lang1024 REF BIB_Auer \\* MERGEFORMAT }}{\fldrslt{Auer}}}
-] While there is evidence of diminishing returns on RNA-seq sampling in excess of 10 million tags (2 gigabases with 2x100 cycle sequencing reads) for eukaryotic RNA-seq 
-[{\field{\*\fldinst{\lang1024 REF BIB_Wang \\* MERGEFORMAT }}{\fldrslt{9}}}
-], shotgun metagenomic samples typically target 10 gigabases per sample. This allows 1 or 2 samples per Miseq flowcell (7 million spots at 400\~bp per spot) and as many as 4 samples per Hiseq flowcell at 2x101.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The innovation of synthetic sample-labeling oligomers known as barcodes allows multiple samples to be sequenced simultaneously in the same flowcell at the same time. This ability is principally thought of as a way to increase the number of samples per instrument run, but is also useful to balance sequencing effort. Biological samples are much more valuable than technical samples in supporting the detection of significant differences between treatments. Auer
-[{\field{\*\fldinst{\lang1024 REF BIB_Auer \\* MERGEFORMAT }}{\fldrslt{Auer}}}
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Experimental design for metagenomic sampling is similar to that for RNA-seq experiments, where block experimental design and at least 5-fold biological replication are recommended. 3-fold biological replication is tolerated, but may not be forever. Biological samples are much more valuable than technical samples in supporting the detection of significant differences between treatments. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Auer
+[{\field{\*\fldinst{\lang1024 REF BIB_Auer2010Statistical \\* MERGEFORMAT }}{\fldrslt{1}}}
 ] and Williams
-[{\field{\*\fldinst{\lang1024 REF BIB_Williams \\* MERGEFORMAT }}{\fldrslt{Williams}}}
-] have suggested using barcodes for blocked experimental designs that control for per-lane technical effects. It has been our experience that the technical repeatability within platforms is very good, and that the principal source of technical variability lies between between different types of sequencing (different read lengths, ABISolid vs. 454 vs. Illumina) and different protocols for library preparation (use of different PCR parameters, use of Multiple Displacement Amplification). Block designs to balance technical variation are better spent on the factors of the experiment, randomizing treatments to sequencing runs or batches of sample processing than to hedge against the effect of lanes or barcodes. \par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Sequencing samples sometimes fail; when sequencing many libraries at once, the failure of some of the samples becomes likely. A single lane can fail, or fail to produce sufficient sequence data at the same time that adjacent lanes produce good sequence. The principal benefit of a design that spreads samples across several lanes is that this design provides insurance against a technical failure that is confined to a single lane. If one lane fails, a loss of one eighth of the sequencing depth is less disruptive to experimental design that the loss of data for one eighth of the samples. Block randomization is clearly indicated, however, if the sequencing protocol, whether extraction, template construction or purification, sequencing chemistry, or platform is changed during an experimental campaign, or when there are so many samples that batch changes in the sequencing protocol could confound the results.\par
-\pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb240 \fi0 {\*\bkmkstart BMsec_2}2{\*\bkmkend BMsec_2}  Experimental design and sequencing platform \par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The large complexity difference between shotgun and targeted gene surveys and the availability of protocols to multiplex more than 600 samples in a single sequencing run invite researchers to sequence large numbers of samples with just a single gene, and to apply shotgun sequencing to selected samples. Another sequencing option is to one or a small number of samples to much greater sequencing depth than the others. This approach is not recommended, as it (by definition) consumes large amounts of sequencing effort that would usually be better applied to more samples to permit characterization of the within-group variability of sequence signals.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Read-length requirements differ from RNA-seq experiments, however. While RNA-seq experiments can quantify expression usefully with short (30- or 50-bp) sequence tags, it is advantageous to get 150-400\~bp reads for shotgun metagenomics. Individual metagenomic reads bear the burden of identifying which organism they come from and what (which biochemical entity) they represent, and the reads must do so individually, since each random fragment may or may not be from the same organism. This makes longer high-quality reads\endash reads in the range of 150-450\~bp\endash more valuable for exploitation than even overwhelming numbers of short ({<}75\~bp) reads. On the other side of the read-length continuum, the anonymous nature of individual reads makes sequencing technologies that produce very long reads with very poor (10%) sequencing error rates (Pacific Biosciences, Oxford Nanopore) poor choices for metagenomics unless complemented with data with high base accuracy. The simultaneous detection of the likely organism and the likely corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples.\par
+[{\field{\*\fldinst{\lang1024 REF BIB_Williams2001RNAseq \\* MERGEFORMAT }}{\fldrslt{9}}}
+] have suggested using barcodes for blocked experimental designs that control for per-lane technical effects. It has been our experience that the technical repeatability within platforms is very good, and that the principal source of technical variability lies between between different types of sequencing (different read lengths, ABISolid vs. 454 vs. Illumina) and different protocols for library preparation (use of different fragmentation techniques, use of different PCR parameters for low-content samples, or use of different read lengths or sequencing platforms). Block designs to balance technical variation are better spent on the factors of the experiment, randomizing treatments to sequencing runs or batches of sample processing than to hedge against the effect of lanes or barcodes. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Sequencing samples sometimes fail; when sequencing many libraries at once, the failure of some of the samples becomes likely. A single lane or a single barcode can fail, producing insufficient quality or quantity data while other samples at the same time produce good sequence. The principal benefit of a design that spreads samples across several lanes is that this design provides insurance against a technical failure that is confined to a single lane. If one lane fails, a loss of one eighth of the sequencing depth is less disruptive to experimental design that the loss of data for one eighth of the samples. Block randomization is clearly indicated, however, if the sequencing protocol, whether extraction, template construction or purification, sequencing chemistry, or platform is changed during an experimental campaign, or when there are so many samples that batch changes in the sequencing protocol could confound the results.\par
+\pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb240 \fi0 {\*\bkmkstart BMsec_2}2{\*\bkmkend BMsec_2}  Sequencing options \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The target sequencing depth\endash the number of sequences and base pairs to collect per sample\endash is the next design parameter. For experiments using shotgun sequencing, the relationship between number of samples and sequencing depth per sample is seen as the principal design constraint. 
+[{\field{\*\fldinst{\lang1024 REF BIB_Auer2010Statistical \\* MERGEFORMAT }}{\fldrslt{1}}}
+] While there is evidence of diminishing returns on RNA-seq sampling in excess of 10 million tags (2 gigabases with 2x100 cycle sequencing reads) for eukaryotic RNA-seq 
+[{\field{\*\fldinst{\lang1024 REF BIB_Wang2011Evaluation \\* MERGEFORMAT }}{\fldrslt{7}}}
+], shotgun metagenomic samples typically target 10 gigabases per sample. This allows 1 or 2 samples per Miseq flowcell (7 million spots at 400\~bp per spot) and 4 samples per Hiseq flowcell at 2x101.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The large complexity difference between shotgun and targeted gene surveys and the availability of protocols to multiplex more than 600 samples in a single sequencing run invite researchers to sequence large numbers of samples with just a single gene, and to apply shotgun sequencing to selected samples. Another sequencing option is to one or a small number of samples to much greater sequencing depth than the others. This approach is not recommended, as it (by definition) consumes large amounts of sequencing effort that would usually be better applied to more samples to permit characterization of the within-group variability of sequence signals.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Unlike RNA-seq experiments, metagenomic shotgun experiments suffer when individual read lengths are less than 150\~bp. Individual metagenomic reads bear the burden of identifying which organism they come from and which biochemical entity they represent. The reads must do this individually, since each random fragment may or may not be from the same organism. This makes longer high-quality reads\endash reads in the range of 150-450\~bp\endash more valuable for exploitation than even overwhelming numbers of short ({<}75\~bp) reads. ABIsolid has been successfully applied to metagenomics
+[{\field{\*\fldinst{\lang1024 REF BIB_Iverson2012Untangling \\* MERGEFORMAT }}{\fldrslt{3}}}
+], but the short read lengths (ca. 50\~bp) present a challenge both to assembly and annotation. Iontorrent has been applied successfully to targeted-gene metagenomic analysis, but is not recommended for shotgun metagenomics because it has similar read lengths and costs to illumina, but has poorer error characteristics.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 On the other side of the read-length continuum, some instruments produce very long ({>}3kbase) reads with very poor (10%) sequencing error rates (Pacific Biosciences, Oxford Nanopore). The anonymous nature of individual reads makes these poor choices for metagenomics unless complemented with Illumina data with high base accuracy. The simultaneous inference of the likely organism and the likely corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples. \par
 {\pard\plain\s32\qc\sb120\sa0\keep\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi0 \par
 \pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 {Table 1: Sequencing platforms suitable for metagenomic sequencing.}{\field{\*\fldinst TC "1 Sequencing platforms suitable for metagenomic sequencing." \\f t}{\fldrslt }}\par
 {\pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 \par
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {Platform 454}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {Platform}\cell}
+{\pard\intbl\qr {Read}\cell}
+{\pard\intbl\qr {Read}\cell}
+{\pard\intbl\qr {Raw}\cell}
+{\pard\intbl\qr {Error}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {Targeted}\cell}
+{\pard\intbl\qr {Shotgun}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {Illumina Miseq}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
-{\pard\intbl\qr {0%}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {}\cell}
+{\pard\intbl\qr {length}\cell}
+{\pard\intbl\qr {number}\cell}
+{\pard\intbl\qr {yield}\cell}
+{\pard\intbl\qr {rate}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {Illumina Hiseq}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {Iontorrent PGM 318}\cell}
+{\pard\intbl\qr {200,400}\cell}
+{\pard\intbl\qr {5M}\cell}
+{\pard\intbl\qr {1-2 Gb / cell}\cell}
+{\pard\intbl\qr {%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {OK}\cell}
+{\pard\intbl\qr {}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {IonTorrent}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {Iontorrent Proton}\cell}
+{\pard\intbl\qr {200}\cell}
+{\pard\intbl\qr {10M}\cell}
+{\pard\intbl\qr {2 Gb / cell}\cell}
+{\pard\intbl\qr {3%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {OK}\cell}
+{\pard\intbl\qr {}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {ABIsolid}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {Illumina Miseq}\cell}
+{\pard\intbl\qr {2x100-2x300}\cell}
+{\pard\intbl\qr {16M}\cell}
+{\pard\intbl\qr {3-5 Gb / cell}\cell}
+{\pard\intbl\qr {1%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {*}\cell}
+{\pard\intbl\qr {*}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {PacBio CCS}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {Illumina Nextseq}\cell}
+{\pard\intbl\qr {2x150}\cell}
+{\pard\intbl\qr {360M, 120M}\cell}
+{\pard\intbl\qr {110 Gb / cell}\cell}
+{\pard\intbl\qr {1%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {*}\cell}
+{\pard\intbl\qr {*}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {PacBio unc}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {Illumina Hiseq}\cell}
+{\pard\intbl\qr {2x100,2x150}\cell}
+{\pard\intbl\qr {160M*8}\cell}
+{\pard\intbl\qr {40 Gb / lane}\cell}
+{\pard\intbl\qr {1%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {*}\cell}
+{\pard\intbl\qr {*}\cell}
 \row}
-{\trowd\cellx2221\cellx2745\cellx3269\cellx3793\cellx4317\cellx4841\cellx5365\cellx5889\cellx6413
-{\pard\intbl\qr {Oxford Nanopore}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
-{\pard\intbl\qr {0}\cell}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {ABIsolid}\cell}
+{\pard\intbl\qr {50}\cell}
+{\pard\intbl\qr {1.4G}\cell}
+{\pard\intbl\qr {70G}\cell}
+{\pard\intbl\qr {5%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {}\cell}
+\row}
+{\trowd\cellx1388\cellx2275\cellx3091\cellx4121\cellx4579\cellx4750\cellx5422\cellx6381
+{\pard\intbl\ql {PacBio}\cell}
+{\pard\intbl\qr {6000}\cell}
+{\pard\intbl\qr {50k}\cell}
+{\pard\intbl\qr {300M}\cell}
+{\pard\intbl\qr {15%}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {}\cell}
+{\pard\intbl\qr {Supplemental}\cell}
 \row}
 } \par
-}\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi300 ABIsolid has been successfully applied to metagenomics, but the short read lengths (ca. 50\~bp) present a challenge both to assembly and short-read annotation. Iontorrent has been applied successfully to targeted-gene metagenomic analysis; barcodes permitting as many as X samples at XXX depths are commercially available. Shotgun metagenomics with Iontorrent is somewhat more risky because error correction for assembly is much more computationally expensive than error correction for targeted gene analysis. \par
-\pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 {\*\bkmkstart BMsubsec_4}2.1{\*\bkmkend BMsubsec_4}  Sample requirements \par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Input DNA quantities for library preparation kits range from 1\~ng to 1ug of material. It is important to make sure that the amount of genetic material available for library preparation falls within the range given by the kit\rquote s protocol. Because library creation depends on creating fragments in size ranges that work well with the sequencing technology, and because fragments in the wrong size range can be filtered out during library creation, the quality of the input nucleic acids has a large effect on library success. Even if a researcher has ample genetic material, if the material is not of good quality a robust library often cannot be made. Sample quality, referring to the survival of high-molecular-weight nucleic acids, depends on the circumstances of extraction and storage as well as properties of the sampling environment; samples taken from hot or acidic environments tend to have lower nucleic acid quality compared to samples from cold or more neutral environment.\par
+}\pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb360 \fi0 {\*\bkmkstart BMsubsec_4}2.1{\*\bkmkend BMsubsec_4}  Sample requirements \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Input DNA quantities for library preparation kits range from 1\~ng to 1{}g of material. It is important to make sure that the amount of genetic material available for library preparation falls within the range given by the kit\rquote s protocol. Because library creation depends on creating fragments in size ranges that work well with the sequencing technology, and because fragments in the wrong size range can be filtered out during library creation, the quality of the input nucleic acids has a large effect on library success. Even if a researcher has ample genetic material, if the material is not of good quality a robust library often cannot be made. Sample quality, referring to the survival of high-molecular-weight nucleic acids, depends on the circumstances of extraction and storage as well as properties of the sampling environment; samples taken from hot or acidic environments tend to have lower nucleic acid quality compared to samples from cold or more neutral environment.\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 2.1.1  Storage\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The proper storage of a sample also plays a role in overall sample quality. We recommend storing samples at -80\u194?\u176?C as soon as possible after collection and avoiding free-thaw cycles. The composition of the microbial communities in environmental samples can shift depending on the conditions of sample storage. Storage variables such as duration of time and temperature can drastically affect the abundance of different members in the communities and create biases. We recommend that extraction of the genetic material happen as soon as possible after sample collection to reduce storage associated community shifts. Alternately, immediately freezing samples at -80\u194?\u176?C after collection can reduce shifts and preserve alpha diversity.
-[{\field{\*\fldinst{\lang1024 REF BIB_Rubin \\* MERGEFORMAT }}{\fldrslt{6}}}
-]\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The proper storage of a sample also plays a role in overall sample quality. Storage variables such as delay before storage, storage temperature, and storage time can drastically affect relative abundances of microorganisms.. Systematic studies have shown that samples stored at room temperature and at \endash 4\'b0{\charscalex50\~}C show loss of 16S diversity and storage-associated microbial composition biases
+[{\field{\*\fldinst{\lang1024 REF BIB_Rubin2013Investigating \\* MERGEFORMAT }}{\fldrslt{5}}}
+]. We recommend storing samples at \endash 80\'b0{\charscalex50\~}C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits. \par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 2.2  Quantification\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 DNA quantification is an important step at many places in the library creation workflow.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 To assess the quantity of a sample after extraction we recommend Invitrogen\u226?\u8364?\u8482?s Qubit Fluorometer. The qubit determines the starting concentrations of given samples by utilizing a fluorescent dye that binds to nucleic acids for quantification. We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA. To assess the quality of the genetic material we recommend using Agilent\u226?\u8364?\u8482?s 2100 Bioanalyzer or an agrose gel to view the genetic material. Generally, high quality genetic material destined for metagenomic research will be free of any fragments below 100-200\~bp. If the number of fragments 200\~bp outnumber the rest this is an indication of overfragmentation or low input quality.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 DNA quantification is an essential step at many places in the library creation workflow because some of the steps in library preparation and sequencing are concentration-dependent.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 For assessing the quantity of a sample after extraction we recommend Invitrogen\u226?\u8364?\u8482?s Qubit Fluorometer. The qubit utilizes a fluorescent dye that binds to nucleic acids to determine the starting concentrations. We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA. To assess the quality of the genetic material we recommend using Agilent\u226?\u8364?\u8482?s 2100 Bioanalyzer or an agrose gel to view the genetic material. Generally, high quality genetic material destined for metagenomic research will be free of any fragments below 100-200\~bp. If the number of fragments 200\~bp outnumber the rest this is an indication of overfragmentation or low input quality.\par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 2.3  Library Types\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 There are two main metagenomic library types/kits that have been tested thoroughly and are confidently recommend for metagenomic sequencing. These two types are the TruSeq and the Nextera, both from Illumina, Inc.(San Diego, California). These two library types differ in their approach in two key components of metagenomic library generation: the fragmenting or shearing of the input material and the ligation of sequencing adapters and identifying barcodes. \par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 For the generation of metagenomic libraries, we recommend two main types: TruSeq libraries and Nextera libraries. TruSeq libraries have been on the market longer, so there are more kits and biotechnology companies that cater to their creation. Nextera libraries are newer and, to date can only be made with Illumina reagent kits. The main difference between Nextera libraries and TruSeq libraries is the fragmentation procedure. TruSeq library generation uses mechanical shearing in a sonicator to fragment the DNA. Nextera library generation uses an engineered enzyme to simultaneously fragment and ligate adapters to the input material. When creating a TruSeq library as compared to a Nextera library, the user has greater control over the insert size of library fragments. TruSeq and Nextera library preparation also varies in regards to the amount of input material needed. TruSeq library generation generally requires 500-1,000\~ng of input material, while Nextera needs only 50\~ng. Generation of Nextera libraries is particularly helpful with low biomass samples.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 There are two main metagenomic library types/kits that we have tested thoroughly and can confidently recommend for metagenomic sequencing. These are the TruSeq and the Nextera, both from Illumina, Inc.(San Diego, California). These two library types differ in their approach in two key components of metagenomic library generation: the fragmenting or shearing of the input material and the ligation of sequencing adapters and sample-identifying barcodes. TruSeq libraries have been on the market longer, so there are more kits and biotechnology companies that cater to their creation. Nextera libraries are newer and, to date can only be made with Illumina reagent kits. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 TruSeq library generation uses mechanical shearing in a sonicator to fragment the DNA and ligates adapters separately. Nextera library generation uses an engineered transposase enzyme to simultaneously fragment and ligate adapters to the input material. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The TruSeq and Nextera approaches differ considerably in the amount of input material needed. TruSeq libraries require 500-1,000\~ng of input DNA, while Nextera needs only 50\~ng. This makes Nextera libraries is particularly helpful with low biomass samples. Because of the use of sonication instead of enzymatic incubation, TruSeq libraries give the user greater control over the insert size of library fragments. \par
 \pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb240 \fi0 3  Wetlab protocol\par
 \pard\plain\s6\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb180 \fi0 Equipment\par
-{\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 1.\tab
-{ Invitrogen Qubit Fluorometer} \par
-\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 2.\tab
-{ Covaris S-series system} \par
-\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 3.\tab
-{ Wafergen\u226?\u8364?\u8482?s Apollo 324 system} \par
-\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 4.\tab
-{ Magnetic Stand or Rack (holds 1.5ml or 96 well plates)} \par
-\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 5.\tab
-{ Thermocycler} \par
-\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 6.\tab
-{ Sage Science\u226?\u8364?\u8482?s Blue Pippin Prep} \par
-\pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 7.\tab
-{ Agilent 2100 Bioanalyer} \par
-}\pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb180 \fi0 3.1  Positive and negative controls \par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 There are numerous controls utilized throughout metagenomic library preparation in order to ensure unbiased and good quality data. The first of these controls is the extraction blank, a negative control. When extracting DNA from metagenomic samples researchers should include 1-3 extraction blanks with the sample set. The researcher will then compare the quality and quantity of the extraction blank to the samples and if a sample is found to match the extraction blank it will be discarded as a false positive. The second of these controls is the library blank and is used in the same manner as the extraction blank. Water will be run through the library preparation process in tandem with the samples and used to remove false positives from the set. Use of a negative control during library preparation is more common during the PCR step and several negative controls will often be included. This is because primer-dimers will often be generated by PCR along with the amplified libraries. Researchers will use the nucleic acid concentration of the negative controls to determined the concentration of primer-dimers in any given sample, often called the background noise. Researchers also employ positive controls in metagenomic preparation. These positive controls consist of sequences of DNA that are of high quality, well studied, and explicitly known. The most common positive control is called PhiX. These positive controls can either be spiked into the samples as an internal control or they can be run by themselves, separately barcoded, as an external control. The positive controls are then compared to the individual samples to help determine the quality of the library and the effectiveness of the library preparation method. \par
+{\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 \qc [Sorry. Ignored {\plain\f3\\begin\{svgraybox\} ... \\end\{svgraybox\}}]\par
+}\pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 3.1  Positive and negative controls \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 There are numerous controls utilized throughout metagenomic library preparation in order to ensure quality data. The first of these controls is the extraction blank, a negative control. When extracting DNA from metagenomic samples researchers should include 1-3 extraction blanks with the sample set. The researcher will then compare the quality and quantity of the extraction blank to the samples and if a sample is found to match the extraction blank it will be discarded as a false positive. The second of these controls is the library blank and is used in the same manner as the extraction blank. Water will be run through the library preparation process in tandem with the samples and used to remove false positives from the set. Use of a negative control during library preparation is more common during the PCR step and several negative controls will often be included. This is because primer-dimers will often be generated by PCR along with the amplified libraries. Researchers will use the nucleic acid concentration of the negative controls to determine the concentration of primer-dimers in any given sample, often called the background noise. Researchers also employ positive controls in metagenomic preparation. These positive controls consist of sequences of DNA that are of high quality, well studied, and explicitly known. The most common positive control is called PhiX. These positive controls can either be spiked into the samples as an internal control or they can be run by themselves, separately barcoded, as an external control. The positive controls are then compared to the individual samples to help determine the quality of the library and the effectiveness of the library preparation method. \par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 3.2  DNA Extraction\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 We have experience with the MoBio PowerSoil DNA isolation Kit. \par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 3.3  DNA Quantification\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 It is recommended to start with 500\~ng of high-quality DNA for TruSeq metagenomic library prep, although lower quality and concentrations may be used. By contrast, the Nextera protocol is optimized for exactly 50\~ng, and samples should be diluted to that level.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 We recommend starting with 500\~ng of high-quality DNA for TruSeq metagenomic library prep, although lower quality and concentrations may be used. By contrast, the Nextera protocol is optimized for exactly 50\~ng, and samples should be diluted to that level.\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 We recommend the following protocol: {\par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 1.\tab
 { Make a Qubit working solution by diluting the Qubit DNA reagent 1:200 in Qubit DNA buffer using a sterile plastic tube.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 2.\tab
-{ Load 190\~ul of Qubit working solution into tubes labeled standard 1 and 2.} \par
+{ Load 190\~{}{\charscalex50\~}L of Qubit working solution into tubes labeled standard 1 and 2.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 3.\tab
-{ Add 10\~ul of standard 1 solution and standard 2 solution to the appropriate tube and mix by vortexing for 2-3 seconds.} \par
+{ Add 10\~{}{\charscalex50\~}L of standard 1 solution and standard 2 solution to the appropriate tube and mix by vortexing for 2-3 seconds.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 4.\tab
 { Note: These are positive and negative controls used to calibrate the instrument.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 5.\tab
-{ Load 198\~ul of Qubit working solution into each individual assay tube.} \par
+{ Load 198\~{}{\charscalex50\~}L of Qubit working solution into each individual assay tube.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 6.\tab
-{ Add 2\~ul of DNA to each assay tube and mix by vortexing 2-3 seconds. The final volume of this solution should equal 200\~ul.} \par
+{ Add 2\~{}{\charscalex50\~}L of DNA to each assay tube and mix by vortexing 2-3 seconds. The final volume of this solution should equal 200\~ul.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 7.\tab
-{ Note: The amount of sample and working solution added to each assay tube can vary depending on concentration of the sample. The sample can vary between 1-20\~ul, and the working solution can vary between 199-180\~ul with the final volume equaling 200\~ul. It is recommended to use 2\~ul of sample to produce the most accurate results.} \par
+{ Note: The amount of sample and working solution added to each assay tube can vary depending on concentration of the sample. The sample can vary between 1-20\~ul, and the working solution can vary between 199-180\~{}{\charscalex50\~}L with the final volume equaling 200\~ul. It is recommended to use 2\~{}{\charscalex50\~}L of sample to produce the most accurate results.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 8.\tab
 { Allow all the tubes to incubate at room temperature for 2 minutes.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 9.\tab
@@ -261,13 +256,14 @@
 { Repeat step 10 and 11 until all samples have been quantified.} \par
 }\pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb180 \fi0 3.4  TruSeq Metagenomic Library Prep\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb180 \fi0 3.4.1   Insert Size Determination\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Insert size determination is an important consideration for TruSeq library prep. Due to the enzymatic shearing of Nextera libraries, the ratio of DNA to enzyme and the enzymatic cut sites will determine the insert size of a Nextera library. For TruSeq library prep, however, it is critically important to determine what library insert size will work best for your downstream analysis. Often, bioinformaticians will have a preference. We recommend consulting with any bioinformaticians that will be analyzing data before making your libraries. \par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The current generation of sequncing platforms produces reads with error rates that vary as a function of position in the read. The deterioration of sequence quality follows from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules, and perhaps due to deterioration of the reagent stocks. Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from two separated parts of the templates. Careful selection of the size of the template molecules further permits reads to overlap. Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing. Read merging is not computationally expensive, and when applied to well constructed libraries more than 90% of paired reads can be found to overlap. Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 It is possible to get more than 90% of the reads in a metagenomic sequencing run to overlap; this usually requires deliberate size selection of the post-adapter-ligation templates. Templates that are too short result in smaller than expected composite reads; templates that are too long result in non-overlapping sequences. When templates less than half the target length, shorter than the read length, occur in a sequencing library, the sequencer sequences the template and a piece of the normally unsequenced adapter on each end\endash resulting in reads that overlap for most of the beginning of the sequences, but that have (different) artificial barcode sequences at their ends. These sequences can be recovered bioinformatically, but are of low value\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Insert size determination is an important consideration for all illumina libraries. Due to the enzymatic shearing of Nextera libraries, the ratio of DNA to enzyme and the enzymatic cut sites will determine the size distribution of a Nextera library. For TruSeq library prep, however, the user has more control over the size distribution. It is critically important to determine what library insert size will work best for your downstream analysis. Often, bioinformaticians will have a preference. We recommend consulting with the bioinformaticians that will be analyzing data before making your libraries. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The current generation of sequncing platforms produces reads with error rates that vary as a function of position in the read. The deterioration of sequence quality results from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules. Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from both ends of the templates. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Careful selection of the size of the template molecules further permits reads to overlap. Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing. Read merging is computationally inexpensive, and when applied to well constructed libraries more than 90% of paired reads can be found to overlap. Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Getting 90% overlap requires careful control of the insert size. Templates that are too short result in more overlap (and less resulting sequence) than expected, reducing sequencing yield. Templates that are too long result in non-overlapping sequences, or mixtures of non-overlapping and overlapping sequences. When templates are much too short, shorter than the read length, the sequencer sequences the template and a piece of the normally unsequenced adapter on each end\endash resulting in reads that overlap for most of the beginning of the sequences, but that have unrelated artificial barcode sequences at their ends. These sequences can be recovered bioinformatically, but are of lower value than optimally overlapping sequences.\par
 {\pard\plain\s31\qc\sb120\sa0\keep\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi300  \par
-\pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 {Figure {\*\bkmkstart BMfig_1}1{\*\bkmkend BMfig_1}: Shown are possible insert sizes and the overlaps, or lack of, that they would create. The blue lines indicate the library and the red and orange lines indicate the forward and reverse adapters.}{\field{\*\fldinst TC "1 Shown are possible insert sizes and the overlaps, or lack of, that they would create. The blue lines indicate the library and the red and orange lines indicate the forward and reverse adapters." \\f f}{\fldrslt }}\par
+\pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 {Figure {\*\bkmkstart BMfig_1}1{\*\bkmkend BMfig_1}: Cartoons of possible insert sizes, with attention to overlap between paired reads. The blue lines indicate DNA from the library and the red and orange lines indicate the forward and reverse adapters.}{\field{\*\fldinst TC "1 Cartoons of possible insert sizes, with attention to overlap between paired reads. The blue lines indicate DNA from the library and the red and orange lines indicate the forward and reverse adapters." \\f f}{\fldrslt }}\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 
-{\pict\picscalex35\picscaley35\picw4125\pich567\picwgoal19800\pichgoal2722\pngblip
+{\pict\picscalex33\picscaley33\picw4125\pich567\picwgoal19800\pichgoal2722\pngblip
 89504e470d0a1a0a0000000d494844520000101d000002370806000000c9cd94bd0000000467414d410000b18f0bfc6105000000206348524d00007a26000080840000fa00000080e8000075300000ea6000003a98000017709cba513c00000006624b474400ff00ff00ffa0bda793000000097048597300002e2300002e23
 0178a53f76000080004944415478daecfd7d781de57d27fe8ffc93b0ecad940830c98ae4675827ac21b168ece5924331443661eda6586c62f2804d168762bb5c5c96936d509cfde2264e2e8ce98365ae7ca9519690069994876d2db609699a580537c4beb298454e830b71c125b80183dd588d1f907ed5ef8f6c1f3e338a8e
 e69c231dc97abdfe7b8f66eeb9ef39f7cc99fb9ef171d5e0e0e060020014edf0fe3d213ff5e2d1d41a6764b639afe9d2906737d656ba19909c3cd9975a322db34e6d6d75a5ab0900000000000000000000000040194da9740500000000000000000000000000000080caf0a3030000000000000000000000000000003049f9
@@ -694,13 +690,13 @@ d63b799e0000000000000000000000000000f0dc8aa317010000000000000000000000000000009c
 32dd6e6cf257575743cef33ce4b22c43eef7fb210f0683da3156565642eef57a21773a9db9c74c330000000000000000000000000000b75771f42200000000000000000000000000000080d3c8a203000000000000000000000000000000d052161d0000000000000000000000000000008096caabaaaa965d09008e575996
 b5d7a6d369c893c9646e4e753a9d90bbdd6ee3364511d7b6c9f37cd997060000000000000000000000000080af531cbd08000000000000000000000000000000e034b2e800000000000000000000000000000000b4944507000000000000000000000000000000a0a5f2aaaaaa65570280db2f6deecbb29cfb7e2acff3908b
 a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000009c49161d0000000000000000000000000000008096b2e800000000000000000000000000000000b4944507000000000000000000000000000000a0a5f2aaaaaa655702803b6fd1e63fcff36557190000000000000000
-00000000008063562cbb02000000000000000000000000000000c0725874000000000000000000000000000000005acaa203000000000000000000000000000000d052ff3f60958c7ddea1d2ff0000002574455874646174653a63726561746500323031352d30362d30355431363a34313a33372d30353a30301e2b725f00
-00002574455874646174653a6d6f6469667900323031352d30362d30355431363a34313a33372d30353a30306f76cae3000000207445587470733a4869526573426f756e64696e67426f780031303534783137312b302b30d9255a800000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e30
+00000000008063562cbb02000000000000000000000000000000c0725874000000000000000000000000000000005acaa203000000000000000000000000000000d052ff3f60958c7ddea1d2ff0000002574455874646174653a63726561746500323031352d30362d32345431363a33363a32342d30353a303052da67f000
+00002574455874646174653a6d6f6469667900323031352d30362d32345431363a33363a32342d30353a30302387df4c000000207445587470733a4869526573426f756e64696e67426f780031303534783137312b302b30d9255a800000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e30
 0a9b70bbe30000000049454e44ae426082}
   \par
-}\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi300 For paired-end sequencing, insert sizes fall in several qualitatively different regimes, illustrated in Figure 1. A 170-180 base pair insert (270-280\~bp including adapters) will result in overlapping reads on a 2X100\~bp Hiseq run. A 250 base pair insert (350\~bp with adapters) will result in over lapping reads on a 2X150 Hiseq run. A 500 base pair insert (600\~bp with adapters) will result in no overlap on a 2X100 or 2X150 Hiseq run. Finally, a 300-400 base pair insert (400-500\~bp with adapters) will result in no overlap with a known distance between the reads for single genome assembly.\par
+}\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi300 For paired-end sequencing, insert sizes fall in several qualitatively different regimes, illustrated in Figure 1. A 160-180 base pair insert (270-280\~bp including adapters) will result in overlapping reads on a 2x100\~bp Hiseq run, with 20-40\~bp of overlap. A 250 base pair insert (350\~bp with adapters) will result in overlapping reads on a 2x150 Hiseq run. A 500 base pair insert (600\~bp with adapters) will result in no overlap on a 2X100 or 2X150 Hiseq run. Finally, a 350-450 base pair insert (450-550\~bp with adapters) will result in no overlap with a known distance between the reads for single genome assembly.\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.4.2  Shearing of Libraries\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series. We recommend setting the water bath between 6-8\u194?\u176?C and using a minimum of 500\~ng sample in 50\~ul-100\~ul. It is important to use no less then 50\~ul of sample as the Covaris relies on surface area to appropriately shear the material. If there is not at least 500\~ng in 100\~ul, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio. The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series. We recommend setting the water bath between 6-8\u194?\u176?C and using a minimum of 500\~ng sample in 50\~{}{\charscalex50\~}L-100\~{}{\charscalex50\~}L. It is important to use no less then 50\~{}{\charscalex50\~}L of sample as the Covaris relies on surface area to appropriately shear the material. If there is not at least 500\~ng in 100\~{}{\charscalex50\~}L, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio. The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.\par
 {\pard\plain\s32\qc\sb120\sa0\keep\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi0  \par
 \pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 {Table {\*\bkmkstart BMshearingtable}2{\*\bkmkend BMshearingtable}: The input protocols for a S2 Covaris to achieve a peak at a given base pair length.}{\field{\*\fldinst TC "2 The input protocols for a S2 Covaris to achieve a peak at a given base pair length." \\f t}{\fldrslt }}\par
 {\pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 \par
@@ -765,7 +761,7 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.4.4  End repair, A-tailing, and Adapter Ligation on the Apollo 324\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 After samples have been sheared, there are several different kits that will enact end-repair, and ligate on A-tails and adapters. We recommend Illumina\u226?\u8364?\u8482?s TruSeq PCR free Sample Prep, Illumina\u226?\u8364?\u8482?s Nano DNA Sample Prep Kits, Kapa Biosystems Library Amplification kits, or Wafergen\u226?\u8364?\u8482?s PrepX Complete ILMN DNA library Kits. Each of the following kits uses the same basic pipeline of end-repair, a-tail ligation, and adapter ligation and each will produce high quality libraries. The kits differ by the amount of input material they can handle, the insert size ranges they can produce, the time investment needed to complete the protocol, and the price. We prefer the Wafergen PrepX Complete ILMN DNA library kit as it has the fastest completion time and it is completed on an automated system allowing for less human error and increased reproducibility. It should be noted that the Kapa Biosystems Library Amplification kits can also be used on Wafergen\u226?\u8364?\u8482?s Apollo 324 system. The following protocol pertains only to using Wafergen\u226?\u8364?\u8482?s PrepX Complete ILMN DNA library Kits on Wafergen\u226?\u8364?\u8482?s Apollo 324 system.\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.4.5  PCR and Size Selection\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 PCR and further size selection is not always necessary. For some applications the wide size distribution generated during library prep is sufficient. If the libraries are at least 2\~nM concentration then PCR is unnecessary. If size selection is unnecessary start this protocol at step 9. If PCR is necessary we recommend using Bio-O Scientific\u226?\u8364?\u8482?s Nextflex DNA Barcodes and PCR mixture. We recommend 10-15 cycles of PCR to achieve at least 2\~nM concentration. If a tighter size distribution is necessary, we recommend further size selection with the Blue Pippin Prep (Sage Science, Inc., Beverly, MA), agarose gels, or E-Gels. Each of these methods vary in the amount of input material they can handle, the insert size ranges they can produce, the time investment needed to complete the protocol, and the price. We prefer the Blue Pippin prep due to its ability to produce tighter sized libraries. The protocol below applies to the Blue Pippin Prep only. It is important to remember that we have added 100\~bp adapters to the library. For instance, an 180\~bp insert must be thought of as a 280\~bp library. Thus we will size select for 100\~bp larger than the given insert size to accommodate for the adapters. We recommend the following protocol: {\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 PCR and further size selection is not always necessary. For some applications the wide size distribution generated during library prep is sufficient. If the libraries are at least 2\~nM concentration then PCR is unnecessary. If size selection is unnecessary start this protocol at step 9. If PCR is necessary we recommend using Bio-O Scientific\u226?\u8364?\u8482?s Nextflex DNA Barcodes and PCR mixture. We recommend 10-15 cycles of PCR to achieve at least 2\~nM concentration. If a tighter size distribution is necessary, we recommend further size selection with the Blue Pippin Prep (Sage Science, Inc., Beverly, MA), agarose gels, or E-Gels. Each of these methods vary in the amount of input material they can handle, the insert size ranges they can produce, the time investment needed to complete the protocol, and the price. We prefer the Blue Pippin prep due to its ability to produce tighter sized libraries. The protocol below applies to the Blue Pippin Prep only. It is important to remember that we have accounted for the approximately 100\~bp of adapter length to the library. For instance, an 180\~bp insert must be thought of as a 280\~bp library. Thus we will size select for 100\~bp larger than the given insert size to accommodate for the adapters. We recommend the following protocol: {\par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 1.\tab
 {1. Choose the appropriate cassette to the given insert size and library size} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 2.\tab
@@ -803,7 +799,7 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 18.\tab
 {d. Fill the sample well to the top with buffer} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 19.\tab
-{e. Remove any buffer from the elution well and fill it with 40\~ul of fresh buffer.} \par
+{e. Remove any buffer from the elution well and fill it with 40\~{}{\charscalex50\~}L of fresh buffer.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 20.\tab
 {f. Place a seal over the elution wells to keep them from overflowing during the run} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 21.\tab
@@ -811,13 +807,13 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 22.\tab
 {5. Mix the library and dye} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 23.\tab
-{a. Mix at least 30\~ul of library with 10\~ul of dye. If there is less then 30\~ul use nuclease-free water to dilute the libraries to 30\~ul.} \par
+{a. Mix at least 30\~{}{\charscalex50\~}L of library with 10\~{}{\charscalex50\~}L of dye. If there is less then 30\~{}{\charscalex50\~}L use nuclease-free water to dilute the libraries to 30\~ul.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 24.\tab
 {b. Vortex the libraries and dye well and spin the mixture down} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 25.\tab
 {6. Load the samples} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 26.\tab
-{a. Remove 40\~ul of buffer from the sample well and replace it with the 40\~ul mixture of sample and dye.} \par
+{a. Remove 40\~{}{\charscalex50\~}L of buffer from the sample well and replace it with the 40\~{}{\charscalex50\~}L mixture of sample and dye.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 27.\tab
 {b. Repeat for each sample} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 28.\tab
@@ -829,15 +825,15 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 31.\tab
 {9. Check the concentration of the samples with a DNA HS assay on the Qubit Fluorometer as referenced above} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 32.\tab
-{10. Use the Qubit concentration and estimated library size (100\~bp + insert size) to calculate the molarity of the sample with the following equation (with X= ng/ul concentration and Y= estimated size of fragment in bp): Molarity in nM = [X/1*10-6]/[Y*660]} \par
+{10. Use the Qubit concentration and estimated library size (100\~bp + insert size) to calculate the molarity of the sample with the following equation (with X= ng/{}{\charscalex50\~}L concentration and Y= estimated size of fragment in bp): Molarity in nM = [X/1*10-6]/[Y*660]} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 33.\tab
 {11. If the estimated molarity is less the 2\~nM then proceed to PCR in step 12. If it is 2\~nM or higher proceed to final library quantification} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 34.\tab
 {12. PCR using Bio-O Scientific\u226?\u8364?\u8482?s Nextflex DNA Barcodes and PCR mixture} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 35.\tab
-{a. Mix 7.5\~ul of the library, 29.5\~ul of nuclease-free water, 12\~ul of NEXTflexTM PCR master mix, and 2\~ul NEXTflex Primer Mix in a well of a PCR strip tube or plate.} \par
+{a. Mix 7.5\~{}{\charscalex50\~}L of the library, 29.5\~{}{\charscalex50\~}L of nuclease-free water, 12\~{}{\charscalex50\~}L of NEXTflexTM PCR master mix, and 2\~{}{\charscalex50\~}L NEXTflex Primer Mix in a well of a PCR strip tube or plate.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 36.\tab
-{b. Set a pipette to 50\~ul and mix by pipetting up and down 10 times} \par
+{b. Set a pipette to 50\~{}{\charscalex50\~}L and mix by pipetting up and down 10 times} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 37.\tab
 {c. PCR on a thermocycler under the following settings} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 38.\tab
@@ -847,7 +843,7 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 40.\tab
 {iii. 4 minutes at 72\u194?\u176?C} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 41.\tab
-{d. Add 44\~ul of AMPure XP Beads} \par
+{d. Add 44\~{}{\charscalex50\~}L of AMPure XP Beads} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 42.\tab
 {e. Incubate at room temperature for 15 minutes. During incubation, prepare an 80% ethanol solution.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 43.\tab
@@ -855,7 +851,7 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 44.\tab
 {g. Remove and discard the supernatant from each tube. Do not disturb the beads.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 45.\tab
-{h. With the samples still on the magnetic stand, add 200\~ul of freshly prepared 80% ethanol to each sample, without disturbing the beads.} \par
+{h. With the samples still on the magnetic stand, add 200\~{}{\charscalex50\~}L of freshly prepared 80% ethanol to each sample, without disturbing the beads.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 46.\tab
 {i. Incubate at room temperature for at least 30 seconds while still on the magnetic stand, then remove and discard all of the supernatant from each tube. Again, do not disturb the beads.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 47.\tab
@@ -863,7 +859,7 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 48.\tab
 {k. Allow the tubes to air dry on the magnetic stand at room temperature for 15 minutes or until the beads no longer appear wet.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 49.\tab
-{l. Add 15\~ul of nuclease-free water to each tube.} \par
+{l. Add 15\~{}{\charscalex50\~}L of nuclease-free water to each tube.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 50.\tab
 {m. Thoroughly resuspend the beads by gently pipetting 10 times.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 51.\tab
@@ -871,17 +867,17 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 52.\tab
 {o. Place the tubes back onto the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 53.\tab
-{p. Transfer the clear supernatant from each tube to an appropriate collection tube. Leave at least 1\~ul of the supernatant behind to avoid carryover of magnetic beads.} \par
+{p. Transfer the clear supernatant from each tube to an appropriate collection tube. Leave at least 1\~{}{\charscalex50\~}L of the supernatant behind to avoid carryover of magnetic beads.} \par
 \pard\plain\s46\ql\fi-283\li283\lin283\sb0\sa120\widctlpar\tql\tx283\f0\fs20\sl240\slmult1 \sb50 \li600\fi-300 54.\tab
 {13. Proceed to Final Library Quantification} \par
 }\pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb180 \fi0 3.5  Nextera Metagenomic Library Prep\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 For metagenomic library prep of low biomass samples, we recommend using Illumina\u226?\u8364?\u8482?s Nextera DNA kit. It is important that exactly 50\~ng of sample is used as this protocol is optimized for exactly 50\~ng. The sample should be in a 20\~ul volume at a concentration of 2.5\~ng/ul. If the sample has 50\~ng but is in a volume that is larger then 20\~ul, a 1.8X ratio of Agencourt Ampure XP Beads can be used to bring the sample to the appropriate volume. Please note that all of the abbreviations in this protocol refer to abbreviations used to describe reagents in the Illumina Nextera DNA kit.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 For metagenomic library prep of low biomass samples, we recommend using Illumina\u226?\u8364?\u8482?s Nextera DNA kit. It is important that exactly 50\~ng of sample is used as this protocol is optimized for exactly 50\~ng. The sample should be in a 20\~{}{\charscalex50\~}L volume at a concentration of 2.5\~ng/ul. If the sample has 50\~ng but is in a volume that is larger then 20\~ul, a 1.8X ratio of Agencourt Ampure XP Beads can be used to bring the sample to the appropriate volume. Please note that all of the abbreviations in this protocol refer to abbreviations used to describe reagents in the Illumina Nextera DNA kit.\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.5.1  Tagmentation of Genomic DNA\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 In this step the transposome fragments the DNA while adding adapter sequences to the ends, allowing it to be amplified by PCR in later steps. We recommend the following protocol:\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.5.2  Clean-up of Tagmented DNA\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 This step is critical because without it the Nextera transposome can bind tightly to the DNA and will interfere with downstream processing. We recommend using ZymoTM Purification Kit (ZR-96 D NA clean and Concentrator TM-5) for this protocol. \par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.5.3  Choosing Adapters and Multiplexing\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 We use Illumina standard indexes in (Table 3) when generating Nextera metagenomic libraries. Nextera libraries are dual-indexed, each sample has two barcodes (an i7 and i5 index), so it is im portant to insure that no two samples in the same pool have the exact same combination of indexes. It is recommended to arrange samples in a 96 well plate and to assign each column an i7 index and each row an i5 index when working in large numbers. When multiplexing, it is also important to choose barcodes for individual samples that will be complementary with the barcodes of other samples in a given pool. As mentioned earlier, it is necessary to have good balance in the green and red channels. For example, if samples with index 701 and 704 were in the same pool, during the first read of the index the machine would only detect samples in the green channel (base T for index 1 and base T for index 2) and the quality of data would drop because the camera would struggle to take quality images as a result of the lack of samples in the red channel. We recommend choosing indexes for samples that allow for at least one base in each channel per pool. For Nextera samples it is important to achieve a red-green channel balance for each separate index.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 We use the Illumina standard indexes when generating Nextera metagenomic libraries. Nextera libraries are dual-indexed, each sample has two barcodes (an i7 and i5 index), so it is important to ensure that no two samples in the same pool have the exact same combination of indexes. It is recommended to arrange samples in a 96 well plate and to assign each column an i7 index and each row an i5 index when working in large numbers. When multiplexing, it is also important to choose barcodes for individual samples that will be complementary with the barcodes of other samples in a given pool. It is also necessary to have good balance in the green and red channels. For example, if samples with index 701 and 704 were in the same pool, during the first read of the index the machine would only detect samples in the green channel (base T for index 1 and base T for index 2) and the quality of data would drop because the camera would struggle to take quality images as a result of the lack of samples in the red channel. We recommend choosing indexes for samples that allow for at least one base in each channel per pool. For Nextera samples it is important to achieve a red-green channel balance for each separate index.\par
 \pard\plain\s5\ql\sb240\sa120\keepn\f0\b\fs24\sl240\slmult1 \sb120 \fi0 3.5.4  PCR Amplification\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 It is critical to use the full amount of recommended input DNA at this step to ensure libraries that produce high quality sequencing results. To complete this step do the following:b\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi0 \par
@@ -897,32 +893,31 @@ a279dd9a741f00000000000000000000000000004e96e67f310a0000000000000000000000000000
 {4. The libraries are considered complete and ready for Illumina sequencing if the molarity is 2\~nM or greater.} \par
 }\pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb300 \fi0 {\*\bkmkstart BMsec_4}4{\*\bkmkend BMsec_4}  Bioinformatic analyses\par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb180 \fi0 4.1  Sequence complexity\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Nucleic acid sequences determined from environmental samples are difficult to interpret for a variety of reasons, and as a result exploitation of metagenomic shotgun data is computationally expensive compared to the study of model organisms. Some parts of microbial genomes evolve quickly and make detection of similarity technically difficult. Many environmental microbes and microbial genes lack close relatives in cultured organisms, resulting in large fractions of many environmental samples going unannotated. Environmental samples present a formidable inference problem of unraveling unkown mixtures of unkown organisms. When this problem has been approached, expectation-maximization has been the algorithmic workhorse. Unlike the sequencing of reference organisms, where the complexity of the sequence is limited by the genome of the underlying organism, environmental samples sometimes show diversity whose limits have not yet been circumscribed by obeservations. This exceedingly high observed sequence diversity makes some datasets fail to compress, and exposes the annotation procedure to gigabases of raw data for annotation.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 High-throughput sequencing datasets of this size are large enouh that general-purpose desktop and laptop computers are a bad choice to store, process, and otherwise work with sequence data. \par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Nucleic acid sequences determined from environmental samples are difficult to interpret for a variety of reasons, and as a result exploitation of metagenomic shotgun data is computationally expensive compared to the study of model organisms. Some parts of microbial genomes evolve quickly and make detection of similarity technically difficult. Many environmental microbes and microbial genes lack close relatives in cultured organisms, resulting in large fractions of many environmental samples going unannotated. Environmental samples present a formidable inference problem of unraveling unknown mixtures of unknown organisms. When this problem has been approached, expectation-maximization has been the algorithmic workhorse. Unlike the sequencing of reference organisms, where the complexity of the sequence is limited by the genome of the underlying organism, environmental samples sometimes show diversity whose limits have not yet been circumscribed by observations. This exceedingly high observed sequence diversity makes some datasets fail to compress, and exposes the annotation procedure to gigabases of raw data for annotation.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 High-throughput sequencing datasets of this size are large enough that general-purpose desktop and laptop computers are a bad choice to store, process, and otherwise work with sequence data. \par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 4.2  Open and closed\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The analysis of both targeted-gene and shotgun sequencing can proceed according to two general approaches, depending on whether inferences about the sequence content of the samples depend on the databases used for comparison and interpretation. These approaches are called closed-reference and open-reference. Open reference approaches are presumably more powerful, but involve unknown sample-dependent biases that cause the completeness of the analytical representation of the sequences to vary.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Comparing new sequence data to a database of sequences or sequence signatures is called "closed-reference annotation." Closed-reference annotation has the advantages that datasets annotated using the same procedure can be reliably compared because the space of possible annotations is limited and can be known in advance. Experience has shown that DNA recruitment of environmental samples to the genomes of all cultivated organisms often explains low (10-50%) fractions of the dataset, leaving 50-90% of environmental shotgun sequneces without recognizable similarity to database sequences.\par
-(\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 XXXX PIPELINE REVIEW, or at least pipeline list) (MG-RAST, HUMANN, MEGAN, imicrobe, IMG/M, CAMERA... )\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Comparing new sequence data to a database of sequences or sequence signatures is called "closed-reference annotation." Closed-reference annotation has the advantages that datasets annotated using the same procedure can be reliably compared because the space of possible annotations is limited and can be known in advance. Experience has shown that DNA recruitment of environmental samples to the genomes of all cultivated organisms often explains low (10-50%) fractions of the dataset, leaving 50-90% of environmental shotgun sequences without recognizable similarity to database sequences.\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Constructing sequence hypotheses from the data and performing a database-comparison annotation on value-added sequences is called open reference annotation. For targeted gene sequencing, the sequence hypotheses are clusters constructed from the observed data; for shotgun sequencing sequencing hypotheses are usually the products of sequence assembly of the shotgun data. Unlike closed-reference annotation, open-reference annotation can discover and describe sequence patterns present in the data but not in the database. Open-reference annotation is more technically difficult and suffers from uncharacterized biases in the sequence construction phase, and difficulty in interpretation of the results. The sequences resulting from assembly, called contigs, are longer and can contain both complete genes and chains of genes from the same organism, permitting better resolution when comparing to databases and allowing analysis of synteny in metagenomic data.\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The increased value of the sequences in open-reference annotation, however, comes with added analytical complexity, because the contigs resulting from metagenomic assembly are not all of equal importance. The collection of all the assembled contigs is always an incomplete summary of the metagenomic dataset. Assembly-based references are consequently heterogenous collections of sequences of higher value than individual reads Contigs vary both in length and in depth, and the effects of this heterogeneity, which depends on uncontrolled properties of the sample and its biological diversity, on analysis are as yet unexplored.\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The growing nature of the set of reference sequences in open-reference (assembly-based) analysis of shotgun metagenomic data means that sequences are typically analyzed in batches using defined sets of reference sequences, and comparisons of sample sets between batches with different sets of references are not straightforward.\par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 4.3  Analysis Workflow overview\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 To address artifacts associated with sequencing technology and to improve post-annotation signal-to-noise, metagenomic data are subjected to a number of sequence-level filters before assembly or annotation. These preprocessing steps remove unwanted sequences, correct low-level errors, and discard sequence subsets enriched in errors.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Removal of known sequence contaminants (or positive control spikes) is computationally straightforward. Samples of host-associated microbes may contain varying amounts of host DNA, and the varying host content of the samples (or perhaps other host characteristics) represnt an unwanted, potentially confounding signal in the genetic analysis of microbial community composition. Reads are compared to the reference genome with a fast read aligner (bwa and bowtie are the current state of the art) and reads that match are excluded from further analysis. Fecal samples from humans and animals, samples of wounds, and plant-associated sampling are all subject to this sort of confounding from host-organism contaimination. The removal of sequences which match a known genome is not computationally expensive.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The current generation of sequencing platforms each has platform-specific artificial sequences which are part of the sequencing technology. These include PCR primers and barcodes that are ligated onto the sequences of interest. For some protocols, these sequneces are intended to appear in the output, but in the standard Illumina single-end and paired-end protocols, adapter sequences in the sequence output are a symptom of poorly-executed sequencing library preparation. These contaminants can include as few as 30\~bp and as much as 150\~bp of distinct sequence. Removing these "adapter" sequences is not computationally expensive, but there are no generally accepted recommendations on how much contamination is acceptable. Some published datasets, both metagenomic and genome sequencing, have large fractions of reads that contain uninformative adapter sequences, and it is likely that these adapter sequences are more problematic for assembly than for recruitment or annotation.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Removal of known sequence contaminants (or positive control spikes) is computationally straightforward. Samples of host-associated microbes may contain varying amounts of host DNA, and the varying host content of the samples (or perhaps other host characteristics) represent an unwanted, potentially confounding signal in the genetic analysis of microbial community composition. Reads are compared to the reference genome with a fast read aligner (bwa and bowtie are the current state of the art) and reads that match are excluded from further analysis. Fecal samples from humans and animals, samples of wounds, and plant-associated sampling are all subject to this sort of confounding from host-organism contamination. The removal of sequences which match a known genome is not computationally expensive.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The current generation of sequencing platforms each has platform-specific artificial sequences which are part of the sequencing technology. These include PCR primers and barcodes that are ligated onto the sequences of interest. For some protocols, these sequences are intended to appear in the output, but in the standard Illumina single-end and paired-end protocols, adapter sequences in the sequence output are a symptom of poorly-executed sequencing library preparation. These contaminants can include as few as 30\~bp and as much as 150\~bp of distinct sequence. Removing these "adapter" sequences is not computationally expensive, but there are no generally accepted recommendations on how much contamination is acceptable. Some published datasets, both metagenomic and genome sequencing, have large fractions of reads that contain uninformative adapter sequences, and it is likely that these adapter sequences are more problematic for assembly than for recruitment or annotation.\par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 4.4  The human factor\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 Just as with laboratory technicians, the bioinformatic data processing requires people with specialized skills who are disinclined to work without pay. The bioinformatic handling of any sort of sequencing data requires some computational competency.\par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Researchers usually get better results by sharing research goals, hypotheses, and prior information with the specialists, both in the wetlab and on the computational end. Procedures both in the wetlab and in the computer to remove unwanted, contaminating DNA or signals \par
 \pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb240 \fi0 {\*\bkmkstart BMsec_5}5{\*\bkmkend BMsec_5}  Results reporting \par
 \pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb60 \fi0 The output from an Illumina Next Generation sequencing run is ultimately a fastq.qz file. Sequences with low quality scores are filtered out before analysis. Metagenomes will be analyzed using the available online resources (e.g. IMG/M, MGRAST, CAMERA, EBIs Metagenomics portal, etc.) providing annotation by comparing transcripts to different functional gene databases (e.g. using BLAST to assign functions against M5NR, SFams and SEED). For more detailed descriptions of potential functional pipelines and analyses of these data see 
-[{\field{\*\fldinst{\lang1024 REF BIB_Thomas2012 \\* MERGEFORMAT }}{\fldrslt{8}}}
+[{\field{\*\fldinst{\lang1024 REF BIB_Thomas2012Metagenomics \\* MERGEFORMAT }}{\fldrslt{6}}}
 ], 
-[{\field{\*\fldinst{\lang1024 REF BIB_MG_RAST \\* MERGEFORMAT }}{\fldrslt{2}}}
+[{\field{\*\fldinst{\lang1024 REF BIB_Meyer2008Metagenomics \\* MERGEFORMAT }}{\fldrslt{4}}}
 ] 
-[{\field{\*\fldinst{\lang1024 REF BIB_API \\* MERGEFORMAT }}{\fldrslt{10}}}
+[{\field{\*\fldinst{\lang1024 REF BIB_Wilke2015RESTful \\* MERGEFORMAT }}{\fldrslt{8}}}
 ]\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The results of closed-reference annotation are per-sample "feature vectors" representing the number of observations of biological molecules of a given type. The number of dimensions of this vector can range from a handful (classifying reads merely by estimated domain) to millions (counting each database sequnece as a distinct potential unit of observation), and in general the number of observable features far exceeds the number of samples.\par
-\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Raw shotgun metagenomics datasets range from hundreds of megabytes to hundreds of gigabytes in size. Since 2009 the Sequence Read Archive, maintained by the International Nucleotide Sequence Databases (INSDC), has archived raw data from sequencing runs with mandatory metadata on protocol, sampling, and sequencing. The archive issues accession numbers for individual samples, individual instrument runs, collections of runs with the same protocol, collections of runs with the same purpose but different protocols, and collections of sequencing experiemnts with different samples. In addition to the public archives, some annotation services (MG-RAST, iMicrobe, and IMG/M) host metagenomic sequence data and annotation results and allow making public raw and value-added sequence data. NCBI\rquote s Whole Genome Shotgun archive accepts assembled contigs in FASTA format if sufficent metadata are provided, and is one option for making contigs available for later use for comparative study. Some consortia have published their value-added data products (for example annotation tables, results from assemblies) separately from the public sequence archives.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 The results of closed-reference annotation are per-sample "feature vectors" representing the number of observations of biological molecules of a given type. The number of dimensions of this vector can range from a handful (classifying reads merely by estimated domain) to millions (counting each database sequence as a distinct potential unit of observation), and in general the number of observable features far exceeds the number of samples.\par
+\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \fi300 Raw shotgun metagenomics datasets range from hundreds of megabytes to hundreds of gigabytes in size. Since 2009 the Sequence Read Archive, maintained by the International Nucleotide Sequence Databases (INSDC), has archived raw data from sequencing runs with mandatory metadata on protocol, sampling, and sequencing. The archive issues accession numbers for individual samples, individual instrument runs, collections of runs with the same protocol, collections of runs with the same purpose but different protocols, and collections of sequencing experiments with different samples. In addition to the public archives, some annotation services (MG-RAST, iMicrobe, and IMG/M) host metagenomic sequence data and annotation results and allow making public raw and value-added sequence data. NCBI\rquote s Whole Genome Shotgun archive accepts assembled contigs in FASTA format if sufficient metadata are provided, and is one option for making contigs available for later use for comparative study. Some consortia have published their value-added data products (for example annotation tables, results from assemblies) separately from the public sequence archives.\par
 \pard\plain\s4\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 {\*\bkmkstart BMsec_5repos}5.1{\*\bkmkend BMsec_5repos}  Repositories\par
 \pard\plain\s3\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb300 \fi0 {\*\bkmkstart BMsec_6}6{\*\bkmkend BMsec_6}  Case study\par
 {\pard\plain\s31\qc\sb120\sa0\keep\widctlpar\f0\fs20\sl240\slmult1 \sb300 \fi0 \par
@@ -1524,8 +1519,8 @@ bfbfc7e7b470e1c2d0dffef6b76b3ea6a9a9a9d36dfefad7bf0ebd60c182d02fbffc72ee39175c70
 affffaafd0cdcdcd35c7686d6dadf95ae1ff5aba7469ee6b73e7ce0dfdf6db6fd77b9a75316edcb8d08b162dca3d66e6cc99f59e260000000000408ff29fe60100000000000000000000282c37cd030000000000000000000050586e9a0700000000000000000000a0b09aea3d01d8d3954aa5428cc1ceabf5fe78ff80beca
 f1a9ffebe973d0ceac899e58473dbd16adede2d91dd75bbdf1f9d81ddbe88d6dd2752d2d2da1f7da6baf1e1fa3bbeff1c081033bed9dd1d4147ffdb4fffefbf7f8eb04000000000000e88cff340f000000000000000000004061b9691e0000000000000000000080c272d33c000000000000000000000085e5a67900000000
 000000000000000acb4df3000000000000000000000014969be60100000000000000000000282c37cd030000000000000000000050586e9a0700000000000000000000a0b0dc340f000000000000000000004061b9691e0000000000000000000080c272d33c000000000000000000000085e5a67900000000000000000000
-000acb4df3000000000000000000000014969be60100000000000000000000282c37cd030000000000000000000050586e9a0700000000000000000000a0b0fe1fb92ca0e075e3d5010000002574455874646174653a63726561746500323031352d30362d30355431363a34313a33382d30353a3030e86302b60000002574
-455874646174653a6d6f6469667900323031352d30362d30355431363a34313a33382d30353a3030993eba0a0000001f7445587470733a4869526573426f756e64696e67426f7800373635783136392b302b3018d106360000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe3
+000acb4df3000000000000000000000014969be60100000000000000000000282c37cd030000000000000000000050586e9a0700000000000000000000a0b0fe1fb92ca0e075e3d5010000002574455874646174653a63726561746500323031352d30362d32345431363a33363a32352d30353a3030f4ad6c440000002574
+455874646174653a6d6f6469667900323031352d30362d32345431363a33363a32352d30353a303085f0d4f80000001f7445587470733a4869526573426f756e64696e67426f7800373635783136392b302b3018d106360000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe3
 0000000049454e44ae426082}
  
 {\pict\picscalex47\picscaley47\picw3021\pich679\picwgoal14501\pichgoal3259\pngblip
@@ -2055,8 +2050,8 @@ bf95878787431e1f1f6ff710dba65aad863c3a3a1af26c7b030000000000c093cc37cd0300000000
 000000806c699a0700000000000000000000205b9ae60100000000000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000205b9ae60100000000000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700
 000000000000000000205b9ae60100000000000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000205b9ae60100000000000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000
 205b9ae60100000000000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000205b9ae60100000000000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000205b9ae60100000000
-000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000205b9ae60100000000000000000000c8d6bf512b4c8b23d5e9430000002574455874646174653a63726561746500323031352d30362d30355431363a34313a33382d30353a3030e86302b60000
-002574455874646174653a6d6f6469667900323031352d30362d30355431363a34313a33382d30353a3030993eba0a0000001f7445587470733a4869526573426f756e64696e67426f7800373839783138372b302b3065161a800000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b
+000000000000c896a6790000000000000000000000b2a5691e00000000000000000000806c699a0700000000000000000000205b9ae60100000000000000000000c8d6bf512b4c8b23d5e9430000002574455874646174653a63726561746500323031352d30362d32345431363a33363a32362d30353a3030c54576d90000
+002574455874646174653a6d6f6469667900323031352d30362d32345431363a33363a32362d30353a3030b418ce650000001f7445587470733a4869526573426f756e64696e67426f7800373839783138372b302b3065161a800000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b
 70bbe30000000049454e44ae426082}
  
 {\pict\picscalex47\picscaley47\picw3021\pich654\picwgoal14501\pichgoal3139\pngblip
@@ -2573,7 +2568,7 @@ dd43d9fbe3fafa3ac857575703dfd9dedecedd473677bbdd205f5c5c04f9eded6da0c6c6c6469037
 d1aa943d00804949d3742cdb109758cf79acc735099398bba21ae318836b008657c6fdf21dd69a49d5f8ea38fee5fbd6407e8ad5d5d520379bcd20f7fbfd2057abd5916b8c7a3facadade58e314992646a6ab47730d4ebf520efecec148eb152f12f2b000000000000607cbc691e000000000000000000008068699a070000
 0000000000000000205a9ae601000000000000000000008856a5ec0100000000fc46699a06b956ab953da4646a6a2a378fe338ebf57ad98709000000000000fc32de340f0000000000000000000040b434cd0300000000000000000000102d4df30000000000000000000000444bd33c0000000000000000000000d1d2340f
 0000000000000000000040b434cd0300000000000000000000102d4df30000000000000000000000444bd33c0000000000000000000000d1d2340f0000000000000000000040b434cd0300000000000000000000102d4df30000000000000000000000444bd33c0000000000000000000000d1fa0f10333ad2477df7f20000
-002574455874646174653a63726561746500323031352d30362d30355431363a34313a33392d30353a30304e1409020000002574455874646174653a6d6f6469667900323031352d30362d30355431363a34313a33392d30353a30303f49b1be0000001f7445587470733a4869526573426f756e64696e67426f7800373834
+002574455874646174653a63726561746500323031352d30362d32345431363a33363a32362d30353a3030c54576d90000002574455874646174653a6d6f6469667900323031352d30362d32345431363a33363a32362d30353a3030b418ce650000001f7445587470733a4869526573426f756e64696e67426f7800373834
 783137312b302b30ea4fbaa20000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe30000000049454e44ae426082}
  
 {\pict\picscalex47\picscaley47\picw3021\pich675\picwgoal14501\pichgoal3240\pngblip
@@ -3151,8 +3146,8 @@ cc01f3eae052ace3558cf5ca7cdf73bd7af50a3d69d2a4d00d0d0da12b2b2b9b3d4673f7e511471c
 c972d33c000000000000000000000025cb4df30000000000000000000000942c37cd030000000000000000000050b2dc340f0000000000000000000040c972d33c000000000000000000000025cb4df30000000000000000000000942c37cd030000000000000000000050b2dc340f0000000000000000000040c972d33c00
 0000000000000000000025cb4df30000000000000000000000942c37cd030000000000000000000050b2dc340f0000000000000000000040c972d33c000000000000000000000025cb4df30000000000000000000000942c37cd030000000000000000000050b2dc340f0000000000000000000040c972d33c000000000000
 000000000025cb4df30000000000000000000000942c37cd030000000000000000000050b2dc340f0000000000000000000040c972d33c000000000000000000000025cb4df30000000000000000000000942c37cd030000000000000000000050b2dc340f0000000000000000000040c972d33c0000000000000000000000
-25cb4df30000000000000000000000942c37cd030000000000000000000050b2fe0f0fa6c2095a334af70000002574455874646174653a63726561746500323031352d30362d30355431363a34313a34302d30353a3030d14945c80000002574455874646174653a6d6f6469667900323031352d30362d30355431363a3431
-3a34302d30353a3030a014fd740000001f7445587470733a4869526573426f756e64696e67426f7800373639783139302b302b3002a325860000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe30000000049454e44ae426082}
+25cb4df30000000000000000000000942c37cd030000000000000000000050b2fe0f0fa6c2095a334af70000002574455874646174653a63726561746500323031352d30362d32345431363a33363a32372d30353a303063327d6d0000002574455874646174653a6d6f6469667900323031352d30362d32345431363a3336
+3a32372d30353a3030126fc5d10000001f7445587470733a4869526573426f756e64696e67426f7800373639783139302b302b3002a325860000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe30000000049454e44ae426082}
  
 {\pict\picscalex22\picscaley22\picw3171\pich1412\picwgoal15221\pichgoal6778\pngblip
 89504e470d0a1a0a0000000d4948445200000c63000005840806000000dc5828cf0000000467414d410000b18f0bfc6105000000206348524d00007a26000080840000fa00000080e8000075300000ea6000003a98000017709cba513c00000006624b474400ff00ff00ffa0bda793000000097048597300002e2300002e23
@@ -4032,30 +4027,28 @@ c600000000000000000000000098828731000000000000000000000000a6e0610c00000000000000
 000000000000000000000098828731000000000000000000000000a6e0610c000000000000000000000080297818030000000000000000000000600a1ec600000000000000000000000098828731000000000000000000000000a6e0610c000000000000000000000080297818030000000000000000000000600a1ec60000
 0000000000000000000098828731000000000000000000000000a6e0610c000000000000000000000080297818030000000000000000000000600a83e5ae000000000000000000000000a7a6b66d431e0e87cb5d255814ff19030000000000000000000000600a1ec600000000000000000000000098828731000000000000
 000000000000a63058ee0a0000000000000000000000706afacddffccd89198e57fe33060000000000000000000000c0143c8c01000000000000000000000030050f630000000000000000000000004ca169dbb65dee4a000000000000000000000070f2dbb97367c8bb77ef5eee2ac1a29c76da6921fbcf18000000000000
-00000000000053f030060000000000000000000000c0143c8c0100000000000000000000003085ff2f7e1684b05d2851ae0000002574455874646174653a63726561746500323031352d30362d30355431363a34313a34312d30353a3030773e4e7c0000002574455874646174653a6d6f6469667900323031352d30362d30
-355431363a34313a34312d30353a30300663f6c00000001f7445587470733a4869526573426f756e64696e67426f7800383532783335382b302b3028146e0d0000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe30000000049454e44ae426082}
+00000000000053f030060000000000000000000000c0143c8c0100000000000000000000003085ff2f7e1684b05d2851ae0000002574455874646174653a63726561746500323031352d30362d32345431363a33363a32382d30353a3030957a0d840000002574455874646174653a6d6f6469667900323031352d30362d32
+345431363a33363a32382d30353a3030e427b5380000001f7445587470733a4869526573426f756e64696e67426f7800383532783335382b302b3028146e0d0000001c7445587470733a4c6576656c0041646f62652d332e3020455053462d332e300a9b70bbe30000000049454e44ae426082}
  \par
 \pard\plain\s30\ql\sb120\sa120\keep\widctlpar\f0\sl240\slmult1 \fi0 {Figure :  }{\field{\*\fldinst TC "3  " \\f f}{\fldrslt }}\par
 }{\pard\plain\s0\qj\widctlpar\f0\fs20\sl240\slmult1 \sb240 \fi0 \qc [Sorry. Ignored {\plain\f3\\begin\{acknowledgement\} ... \\end\{acknowledgement\}}]\par
 }{\pard\plain\s61\ql\sb240\sa120\keepn\f0\b\fs32\sl240\slmult1 \sb120 \fi0 {\plain\b\fs32 References}\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \sb60 \li450\fi0 [{\v\*\bkmkstart BIB_Brown}1{\*\bkmkend BIB_Brown}]\tab
-Brown B, Aaron M (2001) The politics of nature. In: Smith J (ed) The rise of modern genomics, 3rd edn. Wiley, New York \par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_MG_RAST}2{\*\bkmkend BIB_MG_RAST}]\tab
-F Meyer, D Paarmann, M D\rquote Souza, R Olson, EM Glass, M Kubal, T Paczian, A Rodriguez, R Stevens, A Wilke, J Wilkening, RA Edwards (2008). The metagenomics RAST server \u226?\u8364?\u8220? a public resource for the automatic phylogenetic and functional analysis of metagenomes. BMC Bioinofmatics. 9:386. doi:10.1186/1471-2105-9-386\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Mason_deepwater}3{\*\bkmkend BIB_Mason_deepwater}]\tab
-Mason, O., Hazen T., Borglin, S., Chain, P., Dubinsky, E., Fortney, J., et al. (2012). Metagenome, metatranscriptome and single-cell sequencing reveal microbial response to Deepwater Horizon oil spill. The ISME journal, 6(9), 1715-1727\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Korenblum}4{\*\bkmkend BIB_Korenblum}]\tab
-Korenblum E., Souza DB., Penna M, Seldin L. (2013). Molecular Analysis of the Bacterial Communities in Crude Oil Samples from Two Brazilian Offshore Petroleum Platforms. International Journal of Microbiology Volume 2012. doi:10.1155/2012/156537 Lorenz P and Eck J. (2005). Metagenomics Industrial Applications. Nature Reviews Microbiology 3, 510-516. doi:10.1038/nrmicro1161\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Hampton_Marcell}5{\*\bkmkend BIB_Hampton_Marcell}]\tab
-Hampton-Marcell JT., Moormann SM., Owens SM., Gilbert JA. (2013) Preparation and Metatranscriptomic Analyses of Host-Microbe Systems in Microbial Metatgenomics, Metatranscrtomics, and Metaproteomics volume 531 issue 169. Academic Press. ISBN 978-0-12-407863-5. ISSN 0076-6879.\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Rubin}6{\*\bkmkend BIB_Rubin}]\tab
-Rubin BER., Gibbons SM., Kennedy S., Hampton-Marcell J., Owens S., Gilbert J. (2013) Investigating the Impact of Storage Conditions on Microbial Community Composition in Soil Samples. PLOSone. DOI: 10.1371/journal.pone.0070460\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Segata}7{\*\bkmkend BIB_Segata}]\tab
-Segata, N., Boernigen D., Tickle TL., Morgan XC., Garrett WS, Huttenhower C. (2013) Computational Meta\u226?\u8364?\u8482?omics for Microbial Community Studies. Molecular Systems Biology, doi: 10.1038/msb.2013.22\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Thomas2012}8{\*\bkmkend BIB_Thomas2012}]\tab
-Thomas, T., Gilbert, J., Meyer, F. (2012). Metagenomics \u226?\u8364?\u8220? a guide from sampling to data analysis. Microbial Informatics and Experimentation, 2, doi:10.1186/2042-5783-2-3\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Wang}9{\*\bkmkend BIB_Wang}]\tab
-Wang LY., Ke WJ., Sun XB., Liu JF., Gu JD., Mu BZ. (2013). Comparison of bacterial community in aqueous and oil phases of water-flooded petroleum reservoirs using pyrosequencing and clone library approaches. Appl Microbiol Biotechnol. DOI 10.1007/s00253-013-5472-y\par
-\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_API}10{\*\bkmkend BIB_API}]\tab
-A Wilke, J Bischof, T Harrison, T Brettin, M D\rquote Souza, W Gerlach, HMatthews, T Paczian, J Wilkening, E M Glass, N Desai, F Meyer. (2015) A RESTful API for Accessing Microbial Community Data for MG-RAST. PLOS: Computational Biology. DOI: 10.1371/journal.pcbi.1004008 \par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \sb60 \li450\fi0 [{\v\*\bkmkstart BIB_Auer2010Statistical}1{\*\bkmkend BIB_Auer2010Statistical}]\tab
+Paul\~L. Auer and R.\~W. Doerge. Statistical design and analysis of {RNA} sequencing data. {\i Genetics}, 185(2):405\endash 416, June 2010.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Caporaso2012Ultrahighthroughput}2{\*\bkmkend BIB_Caporaso2012Ultrahighthroughput}]\tab
+J.\~Gregory Caporaso, Christian\~L. Lauber, William\~A. Walters, Donna Berg-Lyons, James Huntley, Noah Fierer, Sarah\~M. Owens, Jason Betley, Louise Fraser, Markus Bauer, Niall Gormley, Jack\~A. Gilbert, Geoff Smith, and Rob Knight. Ultra-high-throughput microbial community analysis on the illumina {HiSeq} and {MiSeq} platforms. {\i The ISME journal}, 6(8):1621\endash 1624, August 2012.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Iverson2012Untangling}3{\*\bkmkend BIB_Iverson2012Untangling}]\tab
+Vaughn Iverson, Robert\~M. Morris, Christian\~D. Frazar, Chris\~T. Berthiaume, Rhonda\~L. Morales, and E.\~Virginia Armbrust. Untangling genomes from metagenomes: Revealing an uncultured class of marine euryarchaeota. {\i Science}, 335(6068):587\endash 590, February 2012.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Meyer2008Metagenomics}4{\*\bkmkend BIB_Meyer2008Metagenomics}]\tab
+F.\~Meyer, D.\~Paarmann, M.\~D\rquote Souza, R.\~Olson, E.\~M. Glass, M.\~Kubal, T.\~Paczian, A.\~Rodriguez, R.\~Stevens, A.\~Wilke, J.\~Wilkening, and R.\~A. Edwards. The {M}etagenomics {RAST} server - a public resource for the automatic phylogenetic and functional analysis of metagenomes. {\i BMC Bioinformatics}, 9(1):386\endash 8, September 2008.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Rubin2013Investigating}5{\*\bkmkend BIB_Rubin2013Investigating}]\tab
+Benjamin\~E. Rubin, Sean\~M. Gibbons, Suzanne Kennedy, Jarrad Hampton-Marcell, Sarah Owens, and Jack\~A. Gilbert. Investigating the impact of storage conditions on microbial community composition in soil samples. {\i PloS one}, 8(7), 2013.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Thomas2012Metagenomics}6{\*\bkmkend BIB_Thomas2012Metagenomics}]\tab
+Torsten Thomas, Jack Gilbert, and Folker Meyer. Metagenomics - a guide from sampling to data analysis. {\i Microbial informatics and experimentation}, 2(1):3+, 2012.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Wang2011Evaluation}7{\*\bkmkend BIB_Wang2011Evaluation}]\tab
+Ying Wang, Noushin Ghaffari, Charles\~D. Johnson, Ulisses\~M. Braga-Neto, Hui Wang, Rui Chen, and Huaijun Zhou. Evaluation of the coverage and depth of transcriptome by {RNA}-seq in chickens. {\i BMC Bioinformatics}, 12(Suppl 10):S5+, October 2011.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Wilke2015RESTful}8{\*\bkmkend BIB_Wilke2015RESTful}]\tab
+Andreas Wilke, Jared Bischof, Travis Harrison, Tom Brettin, Mark D\rquote Souza, Wolfgang Gerlach, Hunter Matthews, Tobias Paczian, Jared Wilkening, Elizabeth\~M. Glass, Narayan Desai, and Folker Meyer. A {RESTful} {API} for accessing microbial community data for {MG}-{RAST}. {\i PLoS computational biology}, 11(1):e1004008+, January 2015.\par
+\pard\plain\s62\ql\fi-567\li567\sb0\sa0\f0\fs20\sl240\slmult1 \li450\fi0 [{\v\*\bkmkstart BIB_Williams2001RNAseq}9{\*\bkmkend BIB_Williams2001RNAseq}]\tab
+Alexander\~G. Williams, Sean Thomas, Stacia\~K. Wyman, and Alisha\~K. Holloway. {RNA}-seq data: Challenges in and recommendations for experimental design and analysis. 2001.\par
 }}}
