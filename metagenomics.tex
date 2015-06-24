@@ -21,6 +21,7 @@
                              % when including figure files
 \usepackage{multicol}        % used for the two-column index
 \usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage{gensymb}
 
 % see the list of further useful packages
 % in the Reference Guide
@@ -57,7 +58,7 @@ Abstract summarizes the paper in a 10--15 lines for indexing, discovery, and mar
 
 The technological advances in sequencing technology in the recent decade have made determining the sequence nucleic acid polymers affordable and widespread.  While the study of variations in the genomes of model organisms including humans is a rich and fruitful area of investigation, microorganisms have vastly greater numbers and sequence diversity than macroorganisms.  Sequencing of DNA from environmental samples has become a fast-growing application of sequencing technology.
 
-Metagenomics is the analysis of genetic material extracted from environmental samples or extracted from mixtures of organisms.  Two general approaches are available, targeted gene sequencing and random "shotgun" sequencing.    Targeted sequencing amplifies gene fragments of interest using PCR primers corresponding to conserved regions of selected genes.   Subsets of the sequence of the prokaryotic  rRNA 16S subunit, the internal transcribed spacer (ITS) in fungi, functional genes of interest to oxidation-reduction metabolism(NifH, AmoA), and conserved non-RNA phylogenetic marker genes (XXX) are all suitable.  The 16S rRNA gene has proven most popular for surveying the composition of microbial communities, and as one of the genes that has been under investigation for the longest, its primers and sequences have been the most studied and have the largest number of database sequences.
+Metagenomics is the analysis of genetic material extracted from environmental samples or extracted from mixtures of organisms.  Two general approaches are available, targeted gene sequencing and random "shotgun" sequencing.    Targeted sequencing amplifies gene fragments of interest using PCR primers corresponding to conserved regions of selected genes.   Subsets of the sequence of the prokaryotic  rRNA 16S subunit, the internal transcribed spacer (ITS) in fungi, functional genes of interest to oxidation-reduction metabolism(NifH, AmoA), and conserved non-RNA phylogenetic marker genes (XXX) are all suitable.  The 16S rRNA gene has proven most popular for surveying the composition of microbial communities, and as one of the genes that has been under investigation for the longest, its primers and sequences have been the most studied and have the largest number of database sequences, and protocols for high-throughput sample preparation are available.\cite{Caporaso2012Ultrahighthroughput}
 
 Random, called "shotgun" sequencing provides unaligned samples from each organism's thousands of genes, rather than amplifying a single gene per organism or organismal type.  This increases the complexity of the sequencing data product several thousandfold, and as a result, much greater per-sample sequencing effort is required.
 This higher sequencing effort has meant that environmental shotgun sequencing has been enabled disproportionately by low-cost sequencing technologies, and as a consequence the total amount of shotgun metagenomic sequence data has been rising rapidly.   The Sequence Read Archive has (as of May 2015) 34 Terabases of sequence data tagged as metagenomic in origin; IMG/M and MG-RAST claim to have 4.5  and 76 $\times 10^{12}$~bp respectively. 
@@ -72,65 +73,67 @@ Finally, we can confidently recommend engaging the specialists in the wetlab and
 \subsection{Sample replicates} 
 \label{subsec:2}
 %
-The general aspects of experimental design for metagenomics are similar to those for RNA-seq experiments, where block experimental design and at least 5-fold biological replication are recommended.
-For experiments requiring shotgun sequencing, the relationship between dynamic range and sample number is the principal design constraint. \cite{Auer}    While there is evidence of diminishing returns on RNA-seq sampling in excess of 10 million tags (2 gigabases with 2x100 cycle sequencing reads) for eukaryotic RNA-seq \cite{Wang}, shotgun metagenomic samples typically target 10 gigabases per sample.     This allows 1 or 2 samples per Miseq flowcell  (7 million spots at 400~bp per spot) and as many as 4 samples per Hiseq flowcell at 2x101.
-%
-% Auer and XXX suggest block designs to control for lane effects, and additional controls for barcode effects can be imagined.  Modern sequencers have batch effects that can bias end results, but these seem to be related to the library preparation protocol, including fragmentation method and PCR conditions, rather than lanes or barcodes simultaneously sequenced on an instrument.    
+Experimental design for metagenomic sampling is similar to that for RNA-seq experiments, where block experimental design and at least 5-fold biological replication are recommended.  3-fold biological replication is tolerated, but may not be forever.   Biological samples are much more valuable than technical samples in supporting the detection of significant differences between treatments. 
 
 
-The innovation of synthetic sample-labeling oligomers known as barcodes allows multiple samples to be sequenced simultaneously in the same flowcell at the same time.  This ability is principally thought of as a way to increase the number of samples per instrument run, but is also useful to balance sequencing effort.     Biological samples are much more valuable than technical samples in supporting the detection of significant differences between treatments. 
-Auer\cite{Auer} and Williams\cite{Williams} have suggested using barcodes for blocked experimental designs that control for per-lane technical effects.   It has been our experience that the technical repeatability within platforms is very good, and that the principal source of technical variability lies between between different types of sequencing (different read lengths, ABISolid vs. 454 vs. Illumina) and different protocols for library preparation (use of different PCR parameters, use of Multiple Displacement Amplification).  Block designs to balance technical variation are better spent on the factors of the experiment, randomizing treatments to sequencing runs or batches of sample processing than to hedge against the effect of lanes or barcodes.  
+Auer\cite{Auer2010Statistical} and Williams\cite{Williams2001RNAseq} have suggested using barcodes for blocked experimental designs that control for per-lane technical effects.   It has been our experience that the technical repeatability within platforms is very good, and that the principal source of technical variability lies between between different types of sequencing (different read lengths, ABISolid vs. 454 vs. Illumina) and different protocols for library preparation (use of different fragmentation techniques, use of different PCR parameters for low-content samples, or use of different read lengths or sequencing platforms).  Block designs to balance technical variation are better spent on the factors of the experiment, randomizing treatments to sequencing runs or batches of sample processing than to hedge against the effect of lanes or barcodes.  
 
-Sequencing samples sometimes fail; when sequencing many libraries at once, the failure of some of the samples becomes likely.   
-A single lane can fail, or fail to produce sufficient sequence data at the same time that adjacent lanes produce good sequence.
+Sequencing samples sometimes fail; when sequencing many libraries at once, the failure of some of the samples becomes likely.    
+A single lane or a single barcode can fail, producing insufficient quality or quantity data while other samples at the same time produce good sequence.
 The principal benefit of a design that spreads samples across several lanes is that this design provides insurance against a technical failure that is confined to a single lane.  If one lane fails, a loss of one eighth of the sequencing depth is less disruptive to experimental design that the loss of data for one eighth of the samples.   Block randomization is clearly indicated, however, if the sequencing protocol, whether extraction, template construction or purification, sequencing chemistry, or platform is changed during an experimental campaign, or when there are so many samples that batch changes in the sequencing protocol could confound the results.
 
-\section{Experimental design and sequencing platform }
+\section{Sequenicng options }
 \label{sec:2}
+%
 % Always give a unique label
 % and use \ref{<label>} for cross-references
 % and \cite{<label>} for bibliographic references
 
+The target sequencing depth--the number of sequences and base pairs to collect per sample--is the next design parameter.  For experiments using shotgun sequencing, the relationship between number of samples and sequencing depth per sample is seen as the principal design constraint. \cite{Auer2010Statistical}    While there is evidence of diminishing returns on RNA-seq sampling in excess of 10 million tags (2 gigabases with 2x100 cycle sequencing reads) for eukaryotic RNA-seq \cite{Wang2011Evaluation}, shotgun metagenomic samples typically target 10 gigabases per sample.     This allows 1 or 2 samples per Miseq flowcell  (7 million spots at 400~bp per spot) and 4 samples per Hiseq flowcell at 2x101.
 
 The large complexity difference between shotgun and targeted gene surveys and the availability of protocols to multiplex more than 600 samples in a single sequencing run invite researchers to sequence large numbers of samples with just a single gene, and to apply shotgun sequencing to selected samples.   Another sequencing option is to one or a small number of samples to much greater sequencing depth than the others.  This approach is not recommended, as it (by definition) consumes large amounts of sequencing effort that would usually be better applied to more samples to permit characterization of the within-group variability of sequence signals.
 
-Read-length requirements differ from RNA-seq experiments, however.   While RNA-seq experiments can quantify expression usefully with short (30- or 50-bp) sequence tags,  it is advantageous to get 150-400~bp reads for shotgun metagenomics.   Individual metagenomic reads bear the burden of identifying which organism they come from and what (which biochemical entity) they represent, and the reads must do so individually, since each random fragment may or may not be from the same organism.  This makes longer high-quality reads--reads in the range of 150-450~bp--more valuable for exploitation than even overwhelming numbers of short ($<$75~bp) reads.   On the other side of the read-length continuum, the anonymous nature of individual reads makes sequencing technologies that produce very long reads with very poor (10\%) sequencing error rates (Pacific Biosciences, Oxford Nanopore) poor choices for metagenomics unless complemented with data with high base accuracy.  The simultaneous detection of the likely organism and the likely corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples.
+Unlike RNA-seq experiments, metagenomic shotgun experiments suffer when individual read lengths are less than 150~bp.  Individual metagenomic reads bear the burden of identifying which organism they come from and which biochemical entity they represent.  The reads must do this individually, since each random fragment may or may not be from the same organism.  This makes longer high-quality reads--reads in the range of 150-450~bp--more valuable for exploitation than even overwhelming numbers of short ($<$75~bp) reads.   
+ABIsolid has been successfully applied to metagenomics\cite{Iverson2012Untangling}, but the short read lengths (ca. 50~bp) present a challenge both to assembly and annotation.
+Iontorrent has been applied successfully to targeted-gene metagenomic analysis, but is not recommended for shotgun metagenomics because it has similar read lengths and costs to illumina, but has poorer error characteristics.
 
+On the other side of the read-length continuum, some instruments produce very long ($>$3kbase) reads with very poor (10\%) sequencing error rates (Pacific Biosciences, Oxford Nanopore).   The anonymous nature of individual reads makes these poor choices for metagenomics unless complemented with Illumina data with high base accuracy.  The simultaneous inference of the likely organism and the likely corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples. 
 
 
 \begin{table}
 \caption{Sequencing platforms suitable for metagenomic sequencing.}
-\begin{tabular}{rrrrrrrrrrr}
-Platform
-454  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
-Illumina Miseq & 0\% & 0\% & 0\% & 0\% & 0\% & 0\% & 0\% & 0\%  \\
-Illumina Hiseq & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
-IonTorrent & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
-ABIsolid & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
-PacBio CCS& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
-PacBio unc& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
-Oxford Nanopore  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
+\begin{tabular}{lrrrrrrrrrr}
+Platform &  Read & Read & Raw   & Error &       &  Targeted & Shotgun  \\
+      & length & number & yield &  rate &       &           &         \\
+%Roche 454 &  400 & 200k &  & 3\% &  & OK &   \\
+Iontorrent PGM 318 &  200,400 & 5M & 1-2 Gb / cell & \% &  & OK &   \\
+Iontorrent Proton &  200 & 10M & 2 Gb / cell & 3\% &  & OK &   \\
+Illumina Miseq &  2x100-2x300 & 16M & 3-5 Gb / cell & 1\% &  & * & * \\
+Illumina Nextseq &  2x150 & 360M, 120M & 110 Gb / cell & 1\% &  & * & * \\
+Illumina Hiseq & 2x100,2x150 & 160M*8 & 40 Gb / lane & 1\% &  & * & * \\
+ABIsolid & 50 & 1.4G & 70G & 5\% &  &  &   \\
+PacBio &  6000 & 50k &300M  & 15\% &  &  & Supplemental  \\
+%PacBio CCS & 400 & 50k &  & <1\% &  &  &   \\
+  \\
 \end{tabular}
 \end{table}
 
+
 % Because of the high complexity of metagenomic samples, individual reads contribute little to the genetic characterization of the entire sample, and require recognition of some kind before they are invested with meaning.
 
-ABIsolid has been successfully applied to metagenomics, but the short read lengths (ca. 50~bp) present a challenge both to assembly and short-read annotation.
-Iontorrent has been applied successfully to targeted-gene metagenomic analysis; barcodes permitting as many as X samples at XXX depths are commercially available.  Shotgun metagenomics with Iontorrent is somewhat more risky because error correction for assembly is much more computationally expensive than error correction for targeted gene analysis.  
-% There some new approaches that are lowering the computational burden of error correction and assembly on very complex datasets, particularly probabilistic data structures.
 
 \subsection{Sample requirements }
 \label{subsec:4}
 %
 % When creating metagenomic sequencing libraries the quality and quantity of the genetic material to be sequence is of great importance. 
-Input DNA quantities for library preparation kits range from 1~ng to  1ug of material. It is important to make sure that the amount of genetic material available for library preparation falls within the range given by the kit's protocol.
+Input DNA quantities for library preparation kits range from 1~ng to  1$\umu$g of material. It is important to make sure that the amount of genetic material available for library preparation falls within the range given by the kit's protocol.
 %
 Because library creation depends on creating fragments in size ranges that work well with the sequencing technology, and because fragments in the wrong size range can be filtered out during library creation,  the quality of the input nucleic acids has a large effect on library success. 
 Even if a researcher has ample genetic material, if the material is not of good quality a robust library often cannot be made. 
 Sample quality, referring to the survival of high-molecular-weight nucleic acids, depends on the circumstances of extraction and storage as well as properties of the sampling environment; samples taken from hot or acidic environments tend to have lower nucleic acid quality compared to samples from cold or more neutral environment.
 
 \subsubsection{Storage}
-The proper storage of a sample also plays a role in overall sample quality.  Storage variables such as delay before storage, storage temperature, and storage time can drasically affect relative abundances of microorganisms.. Systematic studies have shown that samples stored at room temperature and at -4\degrees C show loss of 16S diversity and storage-associated microbial composition biases\cite{Rubin}.  We recommend storing samples at -80°C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits.  
+The proper storage of a sample also plays a role in overall sample quality.  Storage variables such as delay before storage, storage temperature, and storage time can drasically affect relative abundances of microorganisms.. Systematic studies have shown that samples stored at room temperature and at --4\degree\,C show loss of 16S diversity and storage-associated microbial composition biases\cite{Rubin2013Investigating}.  We recommend storing samples at --80\degree\,C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits.  
 
 \subsection{Quantification}
 DNA quantification is an essential step at many places in the library creation workflow because some of the steps in library preparation and sequencing are concentration-dependent.
@@ -183,12 +186,12 @@ We recommend starting with 500~ng of high-quality DNA for TruSeq metagenomic lib
 We recommend the following protocol:
 \begin{enumerate}
 \item{     Make a Qubit working solution by diluting the Qubit DNA reagent 1:200 in Qubit DNA buffer using a sterile plastic tube.}
-\item{       Load 190~ul of Qubit working solution into tubes labeled standard 1 and 2.}
-\item{       Add 10~ul of standard 1 solution and standard 2 solution to the appropriate tube and mix by vortexing for 2-3 seconds.}
+\item{       Load 190~$\umu$\,L of Qubit working solution into tubes labeled standard 1 and 2.}
+\item{       Add 10~$\umu$\,L of standard 1 solution and standard 2 solution to the appropriate tube and mix by vortexing for 2-3 seconds.}
 \item{         Note: These are positive and negative controls used to calibrate the instrument.}
-\item{       Load 198~ul of Qubit working solution into each individual assay tube.}
-\item{       Add 2~ul of DNA to each assay tube and mix by vortexing 2-3 seconds. The final volume of this solution should equal 200~ul.}
-\item{        Note: The amount of sample and working solution added to each assay tube can vary depending on concentration of the sample. The sample can vary between 1-20~ul, and the working solution can vary between 199-180~ul with the final volume equaling 200~ul. It is recommended to use 2~ul of sample to produce the most accurate results.}
+\item{       Load 198~$\umu$\,L of Qubit working solution into each individual assay tube.}
+\item{       Add 2~$\umu$\,L of DNA to each assay tube and mix by vortexing 2-3 seconds. The final volume of this solution should equal 200~ul.}
+\item{        Note: The amount of sample and working solution added to each assay tube can vary depending on concentration of the sample. The sample can vary between 1-20~ul, and the working solution can vary between 199-180~$\umu$\,L with the final volume equaling 200~ul. It is recommended to use 2~$\umu$\,L of sample to produce the most accurate results.}
 \item{       Allow all the tubes to incubate at room temperature for 2 minutes.}
 \item{       Select DNA assay on the Qubit Fluorometer. Select run a new calibration.}
 \item{       Insert the tube containing Standard 1, close lid and press read.}
@@ -221,7 +224,7 @@ For paired-end sequencing, insert sizes fall in several qualitatively different 
 
 \subsubsection{Shearing of Libraries}
 
-For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series.  We recommend setting the water bath between 6-8°C and using a minimum of 500~ng sample in 50~\micro L-100~ul. It is important to use no less then 50~ul of sample as the Covaris relies on surface area to appropriately shear the material.  If there is not at least 500~ng in 100~ul, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio.  The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.
+For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series.  We recommend setting the water bath between 6-8°C and using a minimum of 500~ng sample in 50~$\umu$\,L-100~$\umu$\,L. It is important to use no less then 50~$\umu$\,L of sample as the Covaris relies on surface area to appropriately shear the material.  If there is not at least 500~ng in 100~$\umu$\,L, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio.  The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.
 
 \begin{table}
 \label{shearingtable}
@@ -266,47 +269,47 @@ We recommend the following protocol:
 \item{b.      Dislodge any bubbles from the elution chamber}
 \item{c.      Place the cassette into the optics nest}
 \item{d.      Fill the sample well to the top with buffer}
-\item{e.      Remove any buffer from the elution well and fill it with 40~ul of fresh buffer.}
+\item{e.      Remove any buffer from the elution well and fill it with 40~$\umu$\,L of fresh buffer.}
 \item{f.      Place a seal over the elution wells to keep them from overflowing during the run}
 \item{g.      Run a continuity test and continue only if it passes. Try again if it fails.}
 \item{5.      Mix the library and dye}
-\item{a.      Mix at least 30~ul of library with 10~ul of dye. If there is less then 30~ul use nuclease-free water to dilute the libraries to 30~ul.}
+\item{a.      Mix at least 30~$\umu$\,L of library with 10~$\umu$\,L of dye. If there is less then 30~$\umu$\,L use nuclease-free water to dilute the libraries to 30~ul.}
 \item{b.      Vortex the libraries and dye well and spin the mixture down}
 \item{6.      Load the samples}
-\item{a.      Remove 40~ul of buffer from the sample well and replace it with the 40~ul mixture of sample and dye.}
+\item{a.      Remove 40~$\umu$\,L of buffer from the sample well and replace it with the 40~$\umu$\,L mixture of sample and dye.}
 \item{b.      Repeat for each sample}
 \item{c.      Close the lid and hit the “start” button}
 \item{7.      The Blue Pippin will run for 30-56 minutes depending on the given program}
 \item{8.      Open the lid, remove the samples from the elution wells and place into a collection tube}
 \item{9.      Check the concentration of the samples with a DNA HS assay on the Qubit Fluorometer as referenced above}
-\item{10.      Use the Qubit concentration and estimated library size (100~bp + insert size) to calculate the molarity of the sample with the following equation (with X= ng/ul concentration and Y= estimated size of fragment in bp): Molarity in nM = [X/1*10-6]/[Y*660]}
+\item{10.      Use the Qubit concentration and estimated library size (100~bp + insert size) to calculate the molarity of the sample with the following equation (with X= ng/$\umu$\,L concentration and Y= estimated size of fragment in bp): Molarity in nM = [X/1*10-6]/[Y*660]}
 \item{11.     If the estimated molarity is less the 2~nM then proceed to PCR in step 12. If it is 2~nM or higher proceed to final library quantification}
 \item{12.     PCR using Bio-O Scientific’s Nextflex DNA Barcodes and PCR mixture}
-\item{a.      Mix 7.5~ul of the library, 29.5~ul of nuclease-free water, 12~ul of NEXTflexTM PCR master mix, and 2~ul NEXTflex Primer Mix in a well of a PCR strip tube or plate.}
-\item{b.      Set a pipette to 50~ul and mix by pipetting up and down 10 times}
+\item{a.      Mix 7.5~$\umu$\,L of the library, 29.5~$\umu$\,L of nuclease-free water, 12~$\umu$\,L of NEXTflexTM PCR master mix, and 2~$\umu$\,L NEXTflex Primer Mix in a well of a PCR strip tube or plate.}
+\item{b.      Set a pipette to 50~$\umu$\,L and mix by pipetting up and down 10 times}
 \item{c.      PCR on a thermocycler under the following settings}
 \item{i.      2 minutes at 98°C}
 \item{ii.     10-15 cycles of: 30 seconds at 98°C, 30 seconds at 65°C, 60 seconds at 72°C}
 \item{iii.    4 minutes at 72°C}
-\item{d.      Add 44~ul of AMPure XP Beads}
+\item{d.      Add 44~$\umu$\,L of AMPure XP Beads}
 \item{e.      Incubate at room temperature for 15 minutes. During incubation, prepare an 80\% ethanol solution.}
 \item{f.      Place the tubes or plate on the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear.}
 \item{g.      Remove and discard the supernatant from each tube. Do not disturb the beads.}
-\item{h.      With the samples still on the magnetic stand, add 200~ul of freshly prepared 80\% ethanol to each sample, without disturbing the beads.}
+\item{h.      With the samples still on the magnetic stand, add 200~$\umu$\,L of freshly prepared 80\% ethanol to each sample, without disturbing the beads.}
 \item{i.      Incubate at room temperature for at least 30 seconds while still on the magnetic stand, then remove and discard all of the supernatant from each tube. Again, do not disturb the beads.}
 \item{j.      Repeat steps 6 and 7 one more time for a total of two 80\% ethanol washes.}
 \item{k.      Allow the tubes to air dry on the magnetic stand at room temperature for 15 minutes or until the beads no longer appear wet.}
-\item{l.      Add 15~ul of nuclease-free water to each tube.}
+\item{l.      Add 15~$\umu$\,L of nuclease-free water to each tube.}
 \item{m.      Thoroughly resuspend the beads by gently pipetting 10 times.}
 \item{n.      Incubate the tubes at room temperature for 2 minutes.}
 \item{o.      Place the tubes back onto the magnetic stand at room temperature for at least 5 minutes, until the liquid appears clear.}
-\item{p.      Transfer the clear supernatant from each tube to an appropriate collection tube. Leave at least 1~ul of the supernatant behind to avoid carryover of magnetic beads.}
+\item{p.      Transfer the clear supernatant from each tube to an appropriate collection tube. Leave at least 1~$\umu$\,L of the supernatant behind to avoid carryover of magnetic beads.}
 \item{13.     Proceed to Final Library Quantification}
 \end{enumerate}
 
 \subsection{Nextera Metagenomic Library Prep}
 
-For metagenomic library prep of low biomass samples, we recommend using Illumina’s Nextera DNA kit. It is important that exactly 50~ng of sample is used as this protocol is optimized for exactly 50~ng. The sample should be in a 20~ul volume at a concentration of 2.5~ng/ul. If the sample has 50~ng but is in a volume that is larger then 20~ul, a 1.8X ratio of Agencourt Ampure XP Beads can be used to bring the sample to the appropriate volume.  Please note that all of the abbreviations in this protocol refer to abbreviations used to describe reagents in the Illumina Nextera DNA kit.
+For metagenomic library prep of low biomass samples, we recommend using Illumina’s Nextera DNA kit. It is important that exactly 50~ng of sample is used as this protocol is optimized for exactly 50~ng. The sample should be in a 20~$\umu$\,L volume at a concentration of 2.5~ng/ul. If the sample has 50~ng but is in a volume that is larger then 20~ul, a 1.8X ratio of Agencourt Ampure XP Beads can be used to bring the sample to the appropriate volume.  Please note that all of the abbreviations in this protocol refer to abbreviations used to describe reagents in the Illumina Nextera DNA kit.
 
 \subsubsection{Tagmentation of Genomic DNA}
 
@@ -390,7 +393,7 @@ Researchers usually get better results by sharing research goals, hypotheses, an
 \section{Results reporting }
 \label{sec:5}
 
-The output from an Illumina Next Generation sequencing run is ultimately a fastq.qz file. Sequences with low quality scores are filtered out before analysis. Metagenomes will be analyzed using the available online resources (e.g. IMG/M, MGRAST, CAMERA, EBIs Metagenomics portal, etc.) providing annotation by comparing transcripts to different functional gene databases (e.g. using BLAST to assign functions against M5NR, SFams and SEED). For more detailed descriptions of potential functional pipelines and analyses of these data see \cite{Thomas2012}, \cite{MG-RAST} \cite{API}
+The output from an Illumina Next Generation sequencing run is ultimately a fastq.qz file. Sequences with low quality scores are filtered out before analysis. Metagenomes will be analyzed using the available online resources (e.g. IMG/M, MGRAST, CAMERA, EBIs Metagenomics portal, etc.) providing annotation by comparing transcripts to different functional gene databases (e.g. using BLAST to assign functions against M5NR, SFams and SEED). For more detailed descriptions of potential functional pipelines and analyses of these data see \cite{Thomas2012Metagenomics}, \cite{Meyer2008Metagenomics} \cite{Wilke2015RESTful}
 
         The results of closed-reference annotation are per-sample "feature vectors" representing the number of observations of biological molecules of a given type.  The number of dimensions of this vector can range from a handful (classifying reads merely by estimated domain) to millions (counting each database sequnece as a distinct potential unit of observation), and in general the number of observable features far exceeds the number of samples.
 
@@ -429,5 +432,8 @@ If you want to include acknowledgments of assistance and the like at the end of 
 \end{acknowledgement}
 %
 
-\input{referenc}
+% \input{referenc}
+\bibliographystyle{plain}
+\bibliography{metagenomics.bib}
+
 \end{document}
