@@ -130,29 +130,28 @@ Even if a researcher has ample genetic material, if the material is not of good 
 Sample quality, referring to the survival of high-molecular-weight nucleic acids, depends on the circumstances of extraction and storage as well as properties of the sampling environment; samples taken from hot or acidic environments tend to have lower nucleic acid quality compared to samples from cold or more neutral environment.
 
 \subsubsection{Storage}
-The proper storage of a sample also plays a role in overall sample quality. We recommend storing samples at -80°C as soon as possible after collection and avoiding free-thaw cycles.  The composition of the microbial communities in environmental samples can shift depending on the conditions of sample storage. Storage variables such as duration of time and temperature can drastically affect the abundance of different members in the communities and create biases. We recommend that extraction of the genetic material happen as soon as possible after sample collection to reduce storage associated community shifts. Alternately, immediately freezing samples at -80°C after collection can reduce shifts and preserve alpha diversity.\cite{Rubin}
+The proper storage of a sample also plays a role in overall sample quality.  Storage variables such as delay before storage, storage temperature, and storage time can drasically affect relative abundances of microorganisms.. Systematic studies have shown that samples stored at room temperature and at -4\degrees C show loss of 16S diversity and storage-associated microbial composition biases\cite{Rubin}.  We recommend storing samples at -80°C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits.  
 
 \subsection{Quantification}
-DNA quantification is an important step at many places in the library creation workflow.
+DNA quantification is an essential step at many places in the library creation workflow because some of the steps in library preparation and sequencing are concentration-dependent.
 
-To assess the quantity of a sample after extraction we recommend Invitrogen’s Qubit Fluorometer. The qubit determines the starting concentrations of given samples by utilizing a fluorescent dye that binds to nucleic acids for quantification. We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA.
+For assessing the quantity of a sample after extraction we recommend Invitrogen’s Qubit Fluorometer. The qubit utilizes a fluorescent dye that binds to nucleic acids to determine the starting concentrations.  We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA.
 %
 To assess the quality of the genetic material we recommend using Agilent’s 2100 Bioanalyzer or an agrose gel to view the genetic material. Generally, high quality genetic material destined for metagenomic research will be free of any fragments below 100-200~bp.  If the number of fragments 200~bp outnumber the rest this is an indication of overfragmentation or low input quality.
 
 \subsection{Library Types}
-There are two main metagenomic library types/kits that have been tested thoroughly and are confidently recommend for metagenomic sequencing.  These two types are the TruSeq and the Nextera, both from Illumina, Inc.(San Diego, California). These two library types differ in their approach in two key components of metagenomic library generation: the fragmenting or shearing of the input material and the ligation of sequencing adapters and identifying barcodes. 
+There are two main metagenomic library types/kits that we have tested thoroughly and can confidently recommend for metagenomic sequencing.  These are the TruSeq and the Nextera, both from Illumina, Inc.(San Diego, California). These two library types differ in their approach in two key components of metagenomic library generation: the fragmenting or shearing of the input material and the ligation of sequencing adapters and sample-identifying barcodes.  TruSeq libraries have been on the market longer, so there are more kits and biotechnology companies that cater to their creation. 
+Nextera libraries are newer and, to date can only be made with Illumina reagent kits. 
+ 
+TruSeq library generation uses mechanical shearing in a sonicator to fragment the DNA and ligates adapters separately. 
+Nextera library generation uses an engineered transposase enzyme to simultaneously fragment and ligate adapters to the input material. 
 
-For the generation of metagenomic libraries, we recommend two main types: TruSeq libraries and Nextera libraries.  TruSeq libraries have been on the market longer, so there are more kits and biotechnology companies that cater to their creation. 
-Nextera libraries are newer and, to date can only be made with Illumina reagent kits.  
-The main difference between Nextera libraries and TruSeq libraries is the fragmentation procedure. 
-TruSeq library generation uses mechanical shearing in a sonicator to fragment the DNA. 
-Nextera library generation uses an engineered enzyme to simultaneously fragment and ligate adapters to the input material. 
-When creating a TruSeq library as compared to a Nextera library, the user has greater control over the insert size of library fragments.  
-TruSeq and Nextera library preparation also varies in regards to the amount of input material needed. TruSeq library generation generally requires 500-1,000~ng of input material, while Nextera needs only 50~ng. Generation of Nextera libraries is particularly helpful with low biomass samples.
+The TruSeq and Nextera appraoches differ considerably in the amount of input material needed. TruSeq libraries require 500-1,000~ng of input DNA, while Nextera needs only 50~ng.  This makes Nextera libraries is particularly helpful with low biomass samples.
+Because of the use of sonication instead of enzymatic incubation, TruSeq libraries give the user greater control over the insert size of library fragments.  
 
 \section{Wetlab protocol}
-
 \paragraph{Equipment}
+\begin{svgraybox}
 \begin{enumerate}
 \item{    Invitrogen Qubit Fluorometer}
 \item{      Covaris S-series system}
@@ -162,14 +161,15 @@ TruSeq and Nextera library preparation also varies in regards to the amount of i
 \item{      Sage Science’s Blue Pippin Prep}
 \item{      Agilent 2100 Bioanalyer}
 \end{enumerate}
+\end{svgraybox}
 
 \subsection{Positive and negative controls }
 
-There are numerous controls utilized throughout metagenomic library preparation in order to ensure unbiased and good quality data. The first of these controls is the extraction blank, a negative control. When extracting DNA from metagenomic samples researchers should include 1-3 extraction blanks with the sample set. The researcher will then compare the quality and quantity of the extraction blank to the samples and if a sample is found to match the extraction blank it will be discarded as a false positive.
+There are numerous controls utilized throughout metagenomic library preparation in order to ensure quality data. The first of these controls is the extraction blank, a negative control. When extracting DNA from metagenomic samples researchers should include 1-3 extraction blanks with the sample set. The researcher will then compare the quality and quantity of the extraction blank to the samples and if a sample is found to match the extraction blank it will be discarded as a false positive.
 %
 The second of these controls is the library blank and is used in the same manner as the extraction blank. Water will be run through the library preparation process in tandem with the samples and used to remove false positives from the set.
 %
-Use of a negative control during library preparation is more common during the PCR step and several negative controls will often be included. This is because primer-dimers will often be generated by PCR along with the amplified libraries. Researchers will use the nucleic acid concentration of the negative controls to determined the concentration of primer-dimers in any given sample, often called the background noise.
+Use of a negative control during library preparation is more common during the PCR step and several negative controls will often be included. This is because primer-dimers will often be generated by PCR along with the amplified libraries. Researchers will use the nucleic acid concentration of the negative controls to determine the concentration of primer-dimers in any given sample, often called the background noise.
 %
 Researchers also employ positive controls in metagenomic preparation. These positive controls consist of sequences of DNA that are of high quality, well studied, and explicitly known. The most common positive control is called PhiX. These positive controls can either be spiked into the samples as an internal control or they can be run by themselves, separately barcoded, as an external control. The positive controls are then compared to the individual samples to help determine the quality of the library and the effectiveness of the library preparation method. 
 
@@ -178,7 +178,7 @@ We have experience with the MoBio PowerSoil DNA isolation Kit.
 
 \subsection{DNA Quantification}
 
-It is recommended to start with 500~ng of high-quality DNA for TruSeq metagenomic library prep, although lower quality and concentrations may be used. By contrast, the Nextera protocol is optimized for exactly 50~ng, and samples should be diluted to that level.
+We recommend starting with 500~ng of high-quality DNA for TruSeq metagenomic library prep, although lower quality and concentrations may be used. By contrast, the Nextera protocol is optimized for exactly 50~ng, and samples should be diluted to that level.
 
 We recommend the following protocol:
 \begin{enumerate}
@@ -201,25 +201,27 @@ We recommend the following protocol:
 \subsection{TruSeq Metagenomic Library Prep}
 \subsubsection{ Insert Size Determination}
 
-Insert size determination is an important consideration for TruSeq library prep. Due to the enzymatic shearing of Nextera libraries, the ratio of DNA to enzyme and the enzymatic cut sites will determine the insert size of a Nextera library. For TruSeq library prep, however, it is critically important to determine what library insert size will work best for your downstream analysis. Often, bioinformaticians will have a preference. We recommend consulting with any bioinformaticians that will be analyzing data before making your libraries. 
+Insert size determination is an important consideration for all illumina libraries.  Due to the enzymatic shearing of Nextera libraries, the ratio of DNA to enzyme and the enzymatic cut sites will determine the size distribution of a Nextera library.  For TruSeq library prep, however, the user has more control over the size distribution.  It is critically important to determine what library insert size will work best for your downstream analysis. Often, bioinformaticians will have a preference. We recommend consulting with the bioinformaticians that will be analyzing data before making your libraries. 
 
-        The current generation of sequncing platforms produces reads with error rates that vary as a function of position in the read.  The deterioration of sequence quality follows from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules, and perhaps due to deterioration of the reagent stocks.   Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from two separated parts of the templates.  Careful selection of the size of the template molecules further permits reads to overlap.  Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing.  Read merging is not computationally expensive, and when applied to well constructed libraries more than 90\% of paired reads can be found to overlap.  Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.
+        The current generation of sequncing platforms produces reads with error rates that vary as a function of position in the read.  The deterioration of sequence quality results from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules.  Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from both ends of the templates.  
+
+Careful selection of the size of the template molecules further permits reads to overlap.  Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing.  Read merging is computationally inexpensive, and when applied to well constructed libraries more than 90\% of paired reads can be found to overlap.  Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.
         
-It is possible to get more than 90\% of the reads in a metagenomic sequencing run to overlap; this usually requires deliberate size selection of the post-adapter-ligation templates.   Templates that are too short result in smaller than expected composite reads; templates that are too long result in non-overlapping sequences.   When templates less than half the target length, shorter than the read length, occur in a sequencing library, the sequencer sequences the template and a piece of the normally unsequenced adapter on each end--resulting in reads that overlap for most of the beginning of the sequences, but that have (different) artificial barcode sequences at their ends.   These sequences can be recovered bioinformatically, but are of low value
+Getting 90\% overlap requires careful control of the insert size.  Templates that are too short result in more overlap (and less resulting sequence) than expected, reducing sequencing yield.  Templates that are too long result in non-overlapping sequences, or mixtures of non-overlapping and overlapping sequences.   When templates are much too short, shorter than the read length, the sequencer sequences the template and a piece of the normally unsequenced adapter on each end--resulting in reads that overlap for most of the beginning of the sequences, but that have unrelated artificial barcode sequences at their ends.   These sequences can be recovered bioinformatically, but are of lower value than optimally overlapping sequences.
 
 \begin{figure}[t]
 %\sidecaption[t]
-\caption{Shown are possible insert sizes and the overlaps, or lack of, that they would create. The blue lines indicate the library and the red and orange lines indicate the forward and reverse adapters.}
-\includegraphics[scale=.35]{imgs/image1.eps}
+\caption{Cartoons of possible insert sizes, with attention to overlap between paired reads.  The blue lines indicate DNA from the library and the red and orange lines indicate the forward and reverse adapters.}
+\includegraphics[width=11.5cm]{imgs/image1.eps}
 %
 \label{fig:1}       % Give a unique label
 \end{figure}
 
-For paired-end sequencing, insert sizes fall in several qualitatively different regimes, illustrated in Figure 1.    A 170-180 base pair insert (270-280~bp including adapters) will result in overlapping reads on a 2X100~bp Hiseq run. A 250 base pair insert  (350~bp with adapters) will result in over lapping reads on a 2X150 Hiseq run. A 500 base pair insert (600~bp with adapters) will result in no overlap on a 2X100 or 2X150 Hiseq run. Finally, a 300-400 base pair insert (400-500~bp with adapters) will result in no overlap with a known distance between the reads for single genome assembly.
+For paired-end sequencing, insert sizes fall in several qualitatively different regimes, illustrated in Figure 1.    A 160-180 base pair insert (270-280~bp including adapters) will result in overlapping reads on a 2x100~bp Hiseq run, with 20-40~bp of overlap.  A 250 base pair insert  (350~bp with adapters) will result in overlapping reads on a 2x150 Hiseq run. A 500 base pair insert (600~bp with adapters) will result in no overlap on a 2X100 or 2X150 Hiseq run. Finally, a 350-450 base pair insert (450-550~bp with adapters) will result in no overlap with a known distance between the reads for single genome assembly.
 
 \subsubsection{Shearing of Libraries}
 
-For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series.  We recommend setting the water bath between 6-8°C and using a minimum of 500~ng sample in 50~ul-100~ul. It is important to use no less then 50~ul of sample as the Covaris relies on surface area to appropriately shear the material.  If there is not at least 500~ng in 100~ul, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio.  The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.
+For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series.  We recommend setting the water bath between 6-8°C and using a minimum of 500~ng sample in 50~\micro L-100~ul. It is important to use no less then 50~ul of sample as the Covaris relies on surface area to appropriately shear the material.  If there is not at least 500~ng in 100~ul, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio.  The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.
 
 \begin{table}
 \label{shearingtable}
