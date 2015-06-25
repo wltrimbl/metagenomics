@@ -97,6 +97,14 @@ Unlike RNA-seq experiments, metagenomic shotgun experiments suffer when individu
 ABIsolid has been successfully applied to metagenomics\cite{Iverson2012Untangling}, but the short read lengths (ca. 50~bp) present a challenge both to assembly and annotation.
 Iontorrent has been applied successfully to targeted-gene metagenomic analysis, but is not recommended for shotgun metagenomics because it has similar read lengths and costs to illumina, but has poorer error characteristics.
 
+\begin{figure}[t]
+%\sidecaption[t]
+\caption{Histogram of dataset sizes for metagenomic datasets in the Sequence Read Archive as of June 2015.  Shutgun datasets have much greater sequencing requriements, and as a consequence, targeted-gene  datasets outnumber them by a factor of 7.  }
+\includegraphics[width=11.5cm]{imgs/histogram.eps}
+%
+\label{fig:1}       % Give a unique label
+\end{figure}
+
 On the other side of the read-length continuum, some instruments produce very long ($>$3kbase) reads with very poor (10\%) sequencing error rates (Pacific Biosciences, Oxford Nanopore).   The anonymous nature of individual reads makes these poor choices for metagenomics unless complemented with Illumina data with high base accuracy.  The simultaneous inference of the likely organism and the likely corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples. 
 
 
