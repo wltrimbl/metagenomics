@@ -87,7 +87,7 @@ Sequencing samples sometimes fail; when sequencing many libraries at once, the f
 A single lane or a single barcode can fail, producing insufficient quality or quantity data while other samples at the same time produce good sequence.
 The principal benefit of a design that spreads samples across several lanes is that this design provides insurance against a technical failure that is confined to a single lane.  If one lane fails, a loss of one eighth of the sequencing depth is less disruptive to experimental design that the loss of data for one eighth of the samples.   Block randomization is clearly indicated, however, if the sequencing protocol, whether extraction, template construction or purification, sequencing chemistry, or platform is changed during an experimental campaign, or when there are so many samples that batch changes in the sequencing protocol could confound the results.
 
-\section{Sequencing options }
+\subsection{Sequencing options }
 \label{sec:2}
 %
 % Always give a unique label
@@ -157,11 +157,10 @@ Sample quality, referring to the survival of high-molecular-weight nucleic acids
 
 \section{Wetlab protocol}
 
-\subsection{DNA Extraction}
-We have experience with the MoBio PowerSoil DNA isolation Kit.    
-
-\subsubsection{Storage}
+\subsection{Storage}
 The proper storage of a sample also plays a role in overall sample quality.  Storage variables such as delay before storage, storage temperature, and storage time can drastically affect relative abundances of microorganisms.. Systematic studies have shown that samples stored at room temperature and at --4\degree\,C show loss of 16S diversity and storage-associated microbial composition biases\cite{Rubin2013Investigating}.  We recommend storing samples at --80\degree\,C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits.  
+
+We have experience with the MoBio PowerSoil DNA isolation Kit.    
 
 \subsection{Quantification}
 DNA quantification is an essential step at many places in the library creation workflow because some of the steps in library preparation and sequencing are concentration-dependent.
@@ -422,7 +421,7 @@ Just as with laboratory technicians, bioinformatic data processing requires peop
 
 Researchers usually get better results by sharing research goals, hypotheses, and prior information with the specialists, both in the wetlab and on the computational end.  In order to suggest or apply procedures in the wetlab or in the computer lab to attenuate unwanted, contaminating DNA or sequences tecnicans need to know what signals are interesting, and what likely uninformative signals look like.  These specialists cannot help you if you give them DNA and sample numbers and no further instructions.  
 
-\section{Results reporting }
+\section{Reporting }
 \label{sec:5}
 
 The output from an Illumina Next Generation sequencing run is ultimately one or more FASTQ files.\cite{Cock2010FASTQ} 
@@ -435,10 +434,6 @@ In addition to the public archives, some annotation services (MG-RAST, iMicrobe,
 Some consortia have published their value-added data products (for example annotation tables, results from assemblies) separately from the public sequence archives.
 
 The accession numbers from depositions of the raw read data and of assemblies derived from the data must be included and associated with sample names when publishing results using metagenomic sequencing.  
-
-
-%\subsection{Repositories}
-%\label{sec:5repos}
 
 %\section{Case study}
 %\label{sec:6}
