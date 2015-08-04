@@ -43,6 +43,11 @@
 \institute{William L. Trimble, Stephanie M. Greenwald, and Sarah Owens  \at Institute for Genomics and Systems Biology, University of Chicago  %  \email{name@email.address} } 
    and Elizabeth M. Glass  and Folker Meyer \at Argonne National Laboratory  } %\email{name@email.address}} 
 
+% trimble@anl.gov
+% smoormann@anl.gov 
+% Sarah.Owens@anl.gov
+% marland@anl.gov 
+% folker@anl.gov
 %
 %
 \maketitle
@@ -50,12 +55,12 @@
 % "starred" for online
 \abstract*{
 Metagenomics, and shotgun metagenomics in particular, is a field that has disproportionately benefited from advances in high-throughput sequencing technologies.
-This chapter discusses the choice of sample number, depth, and sequencing technology, the shearing, size-selection, and multiplexing options on Illumina platforms, and outlines the steps in the bioinfomratic analysis and sharing of metagenomic data.}
+This chapter discusses the choice of sample number, depth, and sequencing technology, the shearing, size-selection, and multiplexing options on Illumina platforms, and outlines the steps in the bioinformatic analysis and sharing of metagenomic data.}
 
 % Use the plain \texttt{abstract} command if the abstract is also to appear in the printed version of the book.}
 \abstract{ 
 Metagenomics, and shotgun metagenomics in particular, is a field that has disproportionately benefited from advances in high-throughput sequencing technologies.  
-This chapter discusses the choice of sample number, depth, and sequencing technology, the shearing, size-selection, and multiplexing options on Illumina platforms, and outlines the steps in the bioinfomratic analysis and sharing of metagenomic data.  }
+This chapter discusses the choice of sample number, depth, and sequencing technology, the shearing, size-selection, and multiplexing options on Illumina platforms, and outlines the steps in the bioinformatic analysis and sharing of metagenomic data.  }
 
 \section{Introduction}
 \label{sec:1}
@@ -81,7 +86,7 @@ Finally, we can confidently recommend engaging the specialists in the wetlab and
 %
 Experimental design for metagenomic sampling is similar to that for RNA-seq experiments, where block experimental design and at least 5-fold biological replication are recommended.  3-fold biological replication is tolerated, but may not be forever.   Biological samples are much more valuable than technical samples in supporting the detection of significant differences between treatments. 
 
-Auer\cite{Auer2010Statistical} and Williams\cite{Williams2001RNAseq} have suggested using barcodes for blocked experimental designs that control for per-lane technical effects.   It has been our experience that the technical repeatability within platforms is very good, and that the principal source of technical variability lies between between different types of sequencing (different read lengths, ABISolid vs. 454 vs. Illumina) and different protocols for library preparation (use of different fragmentation techniques, use of different PCR parameters for low-content samples, or use of different read lengths or sequencing platforms).  Block designs to balance technical variation are better spent on the factors of the experiment, randomizing treatments to sequencing runs or batches of sample processing than to hedge against the effect of lanes or barcodes.  
+Auer\cite{Auer2010Statistical} and Williams\cite{Williams2001RNAseq} have suggested using barcodes for blocked experimental designs that control for per-lane technical effects.   It has been our experience that the technical repeatability within platforms is very good, and that the principal source of technical variability lies between different types of sequencing (different read lengths, ABISolid vs. 454 vs. Illumina) and different protocols for library preparation (use of different fragmentation techniques, use of different PCR parameters for low-content samples, or use of different read lengths or sequencing platforms).  Block designs to balance technical variation are better spent on the factors of the experiment, randomizing treatments to sequencing runs or batches of sample processing than to hedge against the effect of lanes or barcodes.  
 
 Sequencing samples sometimes fail; when sequencing many libraries at once, the failure of some of the samples becomes likely.    
 A single lane or a single barcode can fail, producing insufficient quality or quantity data while other samples at the same time produce good sequence.
@@ -96,21 +101,21 @@ The principal benefit of a design that spreads samples across several lanes is t
 
 The target sequencing depth--the number of sequences and base pairs to collect per sample--is the next design parameter.  For experiments using shotgun sequencing, the relationship between number of samples and sequencing depth per sample is seen as the principal design constraint. \cite{Auer2010Statistical}    While there is evidence of diminishing returns on RNA-seq sampling in excess of 10 million tags (2 gigabases with 2x100 cycle sequencing reads) for eukaryotic RNA-seq \cite{Wang2011Evaluation}, shotgun metagenomic samples typically target 10 gigabases per sample.     This allows 1 or 2 samples per Miseq flowcell  (7 million spots at 400~bp per spot) and 4 samples per Hiseq flowcell at 2x101.
 
-The large complexity difference between shotgun and targeted gene surveys and the availability of protocols to multiplex more than 600 samples in a single sequencing run invite researchers to sequence large numbers of samples with just a single gene, and to apply shotgun sequencing to selected samples.   Another sequencing option is to one or a small number of samples to much greater sequencing depth than the others.  This approach is not recommended, as it (by definition) consumes large amounts of sequencing effort that would usually be better applied to more samples to permit characterization of the within-group variability of sequence signals.
+The large complexity difference between shotgun and targeted gene surveys and the availability of protocols to multiplex more than 600 samples in a single sequencing run invite researchers to sequence large numbers of samples with just a single gene, and to apply shotgun sequencing to selected samples.   Another sequencing option is to sequence one or a small number of samples to much greater depth than the others.  This approach is not recommended, as it (by definition) consumes large amounts of sequencing effort that would usually be better applied to more samples to permit characterization of the within-group variability of sequence signals.
 
 Unlike RNA-seq experiments, metagenomic shotgun experiments suffer when individual read lengths are less than 150~bp.  Individual metagenomic reads bear the burden of identifying which organism they come from and which biochemical entity they represent.  The reads must do this individually, since each random fragment may or may not be from the same organism.  This makes longer high-quality reads--reads in the range of 150-450~bp--more valuable for exploitation than even overwhelming numbers of short ($<$75~bp) reads.   
 ABIsolid has been successfully applied to metagenomics\cite{Iverson2012Untangling}, but the short read lengths (ca. 50~bp) present a challenge both to assembly and annotation.
-Iontorrent has been applied successfully to targeted-gene metagenomic analysis, but is not recommended for shotgun metagenomics because it has similar read lengths and costs to illumina, but has poorer error characteristics.
+Iontorrent has been applied successfully to targeted-gene metagenomic analysis, but is not recommended for shotgun metagenomics because it has similar read lengths and costs to Illumina, but has poorer error characteristics.
 
 \begin{figure}[t]
 %\sidecaption[t]
-\caption{Histogram of dataset sizes for metagenomic datasets in the Sequence Read Archive as of June 2015.  Shutgun datasets have much greater sequencing requriements, and as a consequence, targeted-gene  datasets outnumber them by a factor of 7.  }
+\caption{Histogram of dataset sizes for metagenomic datasets in the Sequence Read Archive as of June 2015.  Shotgun datasets have much greater sequencing requirements, and as a consequence, targeted-gene  datasets outnumber them by a factor of 7.  }
 \includegraphics[width=11.5cm]{imgs/histogram.eps}
 %
 \label{fig:1}       % Give a unique label
 \end{figure}
 
-On the other side of the read-length continuum, some instruments produce very long ($>$3kbase) reads with very poor (10\%) sequencing error rates (Pacific Biosciences, Oxford Nanopore).   The anonymous nature of individual reads makes these poor choices for metagenomics unless complemented with Illumina data with high base accuracy.  The simultaneous inference of the likely organism and the likely corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples. 
+On the other side of the read-length continuum, some instruments produce very long ($>$3kbase) reads with very poor sequence quality--base call error rates above 10\% (Pacific Biosciences, Oxford Nanopore).   The anonymous nature of individual reads makes these poor choices for metagenomics unless complemented with Illumina data with high base accuracy.  The simultaneous inference of organism and corrected sequence is not currently feasible with only long-read low-quality data except perhaps in the lowest complexity samples. 
 
 
 \begin{table}
@@ -119,7 +124,7 @@ On the other side of the read-length continuum, some instruments produce very lo
 Platform &  Read & Read & Raw   & Error &       &  Targeted & Shotgun  \\
       & length & number & yield &  rate &       &           &         \\
 %Roche 454 &  400 & 200k &  & 3\% &  & OK &   \\
-Iontorrent PGM 318 &  200,400 & 5M & 1-2 Gb / cell & \% &  & OK &   \\
+Iontorrent PGM 318 &  200,400 & 5M & 1-2 Gb / cell & 2\% &  & OK &   \\
 Iontorrent Proton &  200 & 10M & 2 Gb / cell & 3\% &  & OK &   \\
 Illumina Miseq &  2x100-2x300 & 16M & 3-5 Gb / cell & 1\% &  & * & * \\
 Illumina Nextseq &  2x150 & 360M, 120M & 110 Gb / cell & 1\% &  & * & * \\
@@ -158,16 +163,16 @@ Sample quality, referring to the survival of high-molecular-weight nucleic acids
 \section{Wetlab protocol}
 
 \subsection{Storage}
-The proper storage of a sample also plays a role in overall sample quality.  Storage variables such as delay before storage, storage temperature, and storage time can drastically affect relative abundances of microorganisms.. Systematic studies have shown that samples stored at room temperature and at --4\degree\,C show loss of 16S diversity and storage-associated microbial composition biases\cite{Rubin2013Investigating}.  We recommend storing samples at --80\degree\,C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits.  
+The proper storage of a sample also plays a role in overall sample quality.  Storage variables such as delay before storage, storage temperature, and storage time can drastically affect relative abundances of microorganisms.  Systematic studies have shown that samples stored at room temperature and at --4\degree\,C show loss of 16S diversity and storage-associated microbial composition biases\cite{Rubin2013Investigating}.  We recommend storing samples at --80\degree\,C as soon as possible after collection, avoiding free-thaw cycles, and consistent extraction following storage to reduce storage associated community shits.  
 
 We have experience with the MoBio PowerSoil DNA isolation Kit.    
 
 \subsection{Quantification}
 DNA quantification is an essential step at many places in the library creation workflow because some of the steps in library preparation and sequencing are concentration-dependent.
 
-For assessing the quantity of a sample after extraction we recommend Invitrogen’s Qubit Fluorometer. The qubit utilizes a fluorescent dye that binds to nucleic acids to determine the starting concentrations.  We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA.
+For assessing the quantity of a sample after extraction we recommend Invitrogen’s Qubit Fluorometer. The Qubit utilizes a fluorescent dye that binds to nucleic acids to determine the starting concentrations.  We recommend avoiding the Nanodrop, as it consistently overestimates nucleic acid concentrations. Unlike the Nanodrop, the Qubit Fluorometer can discriminate between DNA and contaminants, such as RNA.
 %
-To assess the quality of the genetic material we recommend using Agilent’s 2100 Bioanalyzer or an agrose gel to view the genetic material. Generally, high quality genetic material destined for metagenomic research will be free of any fragments below 100-200~bp.  If the number of fragments 200~bp outnumber the rest this is an indication of overfragmentation or low input quality.
+To assess the quality of the genetic material we recommend using Agilent’s 2100 Bioanalyzer or an agrose gel. Generally, high quality nucleic acids destined for metagenomic research will be free of any fragments below 100-200~bp.  If the number of fragments 200~bp outnumber the rest this is an indication of overfragmentation or low input quality.
 
 
 \paragraph{Equipment}
@@ -218,11 +223,11 @@ We recommend the following protocol:
 \subsection{TruSeq Metagenomic Library Prep}
 \subsubsection{ Insert Size Determination}
 
-Insert size determination is an important consideration for all illumina libraries.  Due to the enzymatic shearing of Nextera libraries, the ratio of DNA to enzyme and the enzymatic cut sites will determine the size distribution of a Nextera library.  For TruSeq library prep, however, the user has more control over the size distribution.  It is critically important to determine what library insert size will work best for your downstream analysis. Often, bioinformaticians will have a preference. We recommend consulting with the bioinformaticians that will be analyzing data before making your libraries. 
+Insert size determination is an important consideration for all Illumina libraries.  Due to the enzymatic shearing of Nextera libraries, the ratio of DNA to enzyme and the enzymatic cut sites will determine the size distribution of a Nextera library.  For TruSeq library prep, however, the user has more control over the size distribution.  It is critically important to determine what library insert size will work best for your downstream analysis. Often, bioinformaticians will have a preference. We recommend consulting with the bioinformaticians that will be analyzing data before making your libraries. 
 
-        The current generation of sequncing platforms produces reads with error rates that vary as a function of position in the read.  The deterioration of sequence quality results from imperfect extension reactions which cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules.  Paired-end sequencing, which initiates symthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from both ends of the templates.  
+        The current generation of sequncing platforms produces reads with error rates that vary as a function of position in the read.  The deterioration of sequence quality results from imperfect extension reactions that cause the sequencing signal to fade in strength and contrast, in part due to contributions from non-synchronized populations of template molecules.  Paired-end sequencing, which initiates synthesis from primers on opposite ends of the sequencing template allows the high-quality bases to be drawn from both ends of the templates.  
 
-Careful selection of the size of the template molecules further permits reads to overlap.  Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing.  Read merging is computationally inexpensive, and when applied to well constructed libraries more than 90\% of paired reads can be found to overlap.  Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.
+Careful selection of the size of the template molecules further permits reads to overlap.  Libraries constructed so that the end of the first read overlaps with the end of the second are called "overlapping" libraries and allow the construction of longer composite reads, where the low-quality parts of each reads are complemented by redundant sequencing.  Read merging is computationally inexpensive compared to assembly.  When applied to well constructed libraries more than 90\% of paired reads can be found to overlap.  Variations in the overlap fraction between different samples likely result from differences in template length distribution, and to the extent that this affects annotation this may be one of the sources of library-construction biases that occur in annotation output as batch effects.
         
 Getting 90\% overlap requires careful control of the insert size.  Templates that are too short result in more overlap (and less resulting sequence) than expected, reducing sequencing yield.  Templates that are too long result in non-overlapping sequences, or mixtures of non-overlapping and overlapping sequences.   When templates are much too short, shorter than the read length, the sequencer sequences the template and a piece of the normally unsequenced adapter on each end--resulting in reads that overlap for most of the beginning of the sequences, but that have unrelated artificial barcode sequences at their ends.   These sequences can be recovered bioinformatically, but are of lower value than optimally overlapping sequences.
 
@@ -238,7 +243,7 @@ For paired-end sequencing, insert sizes fall in several qualitatively different 
 
 \subsubsection{Shearing of Libraries}
 
-For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series.  We recommend setting the water bath between 6-8°C and using a minimum of 500~ng sample in 50~$\umu$\,L-100~$\umu$\,L. It is important to use no less then 50~$\umu$\,L of sample as the Covaris relies on surface area to appropriately shear the material.  If there is not at least 500~ng in 100~$\umu$\,L, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio.  The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.
+For TruSeq libraries we recommend using the Covaris S-series system for mechanical shearing. The following instructions pertain to the S2 system but can be easily adapted to the S1 series.  We recommend setting the water bath between 6-8°C and using a minimum of 500~ng sample in 50~$\umu$\,L-100~$\umu$\,L. It is important to use no less than 50~$\umu$\,L of sample as the Covaris relies on surface area to appropriately shear the material.  If there is not at least 500~ng in 100~$\umu$\,L, we recommend using Agencourt Ampure XP Beads to concentrate the sample down to a smaller volume using a 1.8X bead ratio.  The conditions set on the Covaris are directly related to the preferred insert size of the final library, use the following table to determine what conditions to use for shearing.
 
 \begin{table}
 \label{shearingtable}
@@ -255,7 +260,7 @@ Time (Seconds) & 430 & 180 & 80 & 55 & 80 & 50 & 40 & 15  \\
 \subsubsection{Choosing barcodes and multiplexing}
 
 When multiplexing, it is important to choose mixtures of barcodes that result in complementary color mixtures within 
-the same pool/sequencing lane. Illumina Miseq and Hiseq instruemnts use four-color encoding, and 
+the same pool/sequencing lane. Illumina Miseq and Hiseq instruments use four-color encoding, and 
 bases A and C are principally found in the red channel while bases T and G are read out in the green channel. 
 Mixtures of balanced color signals for each base--including the bases in the barcode--help the 
 software maintain high data quality.
@@ -273,7 +278,7 @@ After samples have been sheared, there are several different kits that will perf
 
 \subsubsection{PCR and Size Selection}
 
-PCR and further size selection is not always necessary. For some applications the wide size distribution generated during library prep is sufficient. If the libraries are at least 2~nM concentration then PCR is unnecessary. If size selection is unnecessary start this protocol at step 9. If PCR is necessary we recommend using Bio-O Scientific’s Nextflex DNA Barcodes and PCR mixture.  We recommend 10-15 cycles of PCR to achieve at least 2~nM concentration. If a tighter size distribution is necessary, we recommend further size selection with the Blue Pippin Prep (Sage Science, Inc., Beverly, MA), agarose gels, or E-Gels.  Each of these methods vary in the amount of input material they can handle, the insert size ranges they can produce, the time investment needed to complete the protocol, and the price. We prefer the Blue Pippin prep due to its ability to produce tighter sized libraries. The protocol below applies to the Blue Pippin Prep only. It is important to remember that we have accounted for the approximately 100~bp of adapter length to the library.  For instance, an 180~bp insert must be thought of as a 280~bp library. Thus we will size select for 100~bp larger than the given insert size to accommodate for the adapters.
+PCR and further size selection is not always necessary. For some applications the wide size distribution generated during library prep is sufficient. If the libraries are at least 2~nM concentration then PCR is unnecessary. If size selection is unnecessary start this protocol at step 9. If PCR is necessary we recommend using Bio-O Scientific’s NEXTflex DNA Barcodes and PCR mixture.  We recommend 10-15 cycles of PCR to achieve at least 2~nM concentration. If a tighter size distribution is necessary, we recommend further size selection with the Blue Pippin Prep (Sage Science, Inc., Beverly, MA), agarose gels, or E-Gels.  Each of these methods vary in the amount of input material they can handle, the insert size ranges they can produce, the time investment needed to complete the protocol, and the price. We prefer the Blue Pippin prep due to its ability to produce tighter sized libraries. The protocol below applies to the Blue Pippin Prep only. It is important to remember that we have accounted for the approximately 100~bp of adapter length to the library.  For instance, a 180~bp insert must be thought of as a 280~bp library. Thus we will size select for 100~bp larger than the given insert size to accommodate for the adapters.
 We recommend the following protocol:
 \begin{enumerate}
 \item{1.      Choose the appropriate cassette to the given insert size and library size}
@@ -287,7 +292,7 @@ We recommend the following protocol:
 \item{c.      Select either “range” or “tight” and enter in the given base pair range or peak}
 \item{d.      Click the “use internal standards” button}
 \item{3.      Calibrate the Optics}
-\item{a.      Place the calibration fixture in the optical nest, close the lid, and hit “calibrate.”}
+\item{a.      Place the calibration fixture in the optical nest, close the lid and hit “calibrate.”}
 \item{b.      Continue only if it passes, if it does not pass, try again.}
 \item{4.      Load the Cassette}
 \item{a.      Inspect the cassette from bubbles, breakage of agarose column, and equal buffer levels.}
@@ -309,8 +314,8 @@ We recommend the following protocol:
 \item{9.      Check the concentration of the samples with a DNA HS assay on the Qubit Fluorometer as referenced above}
 \item{10.      Use the Qubit concentration and estimated library size (100~bp + insert size) to calculate the molarity of the sample with the following equation (with X= ng/$\umu$\,L concentration and Y= estimated size of fragment in bp): Molarity in nM = [X/1*10-6]/[Y*660]}
 \item{11.     If the estimated molarity is less the 2~nM then proceed to PCR in step 12. If it is 2~nM or higher proceed to final library quantification}
-\item{12.     PCR using Bio-O Scientific’s Nextflex DNA Barcodes and PCR mixture}
-\item{a.      Mix 7.5~$\umu$\,L of the library, 29.5~$\umu$\,L of nuclease-free water, 12~$\umu$\,L of NEXTflexTM PCR master mix, and 2~$\umu$\,L NEXTflex Primer Mix in a well of a PCR strip tube or plate.}
+\item{12.     PCR using Bio-O Scientific’s NEXTflex\textsuperscript{TM} DNA Barcodes and PCR mixture}
+\item{a.      Mix 7.5~$\umu$\,L of the library, 29.5~$\umu$\,L of nuclease-free water, 12~$\umu$\,L of NEXTflex\textsuperscript{TM} PCR master mix, and 2~$\umu$\,L NEXTflex\textsuperscript{TM} Primer Mix in a well of a PCR strip tube or plate.}
 \item{b.      Set a pipette to 50~$\umu$\,L and mix by pipetting up and down 10 times}
 \item{c.      PCR on a thermocycler under the following settings}
 \item{i.      2 minutes at 98°C}
@@ -334,7 +339,7 @@ We recommend the following protocol:
 
 \subsection{Nextera Metagenomic Library Prep}
 
-For metagenomic library prep of low biomass samples, we recommend using Illumina’s Nextera DNA kit. It is important that exactly 50~ng of sample is used as this protocol is optimized for exactly 50~ng. The sample should be in a 20~$\umu$\,L volume at a concentration of 2.5~ng/ul. If the sample has 50~ng but is in a volume that is larger then 20~ul, a 1.8X ratio of Agencourt Ampure XP Beads can be used to bring the sample to the appropriate volume.  Please note that all of the abbreviations in this protocol refer to abbreviations used to describe reagents in the Illumina Nextera DNA kit.
+For metagenomic library prep of low biomass samples, we recommend using Illumina’s Nextera DNA kit. It is important that exactly 50~ng of sample is used as this protocol is optimized for exactly 50~ng. The sample should be in a 20~$\umu$\,L volume at a concentration of 2.5~ng/ul. If the sample has 50~ng but is in a volume that is larger than 20~ul, a 1.8X ratio of Agencourt Ampure XP Beads can be used to bring the sample to the appropriate volume.  Please note that all of the abbreviations in this protocol refer to abbreviations used to describe reagents in the Illumina Nextera DNA kit.
 
 \subsubsection{Tagmentation of Genomic DNA}
 
@@ -350,25 +355,25 @@ This step is critical because without it the Nextera transposome can bind tightl
 Nextera libraries are dual-indexed, meaning that each sample has two barcodes (an i7 and i5 index) ligated on opposite adapter/primers.  It is important to ensure that no two samples in the same pool have the exact same combination of indexes. We recommend arranging samples in a 96 well plate and to assign each column an i7 index and each row an i5 index when working with moderate numbers of samples. 
 
 When multiplexing, it is also important to choose barcodes for individual samples that will be color-complementary with the barcodes of other samples in a given pool, avoiding mixtures of barcodes with extreme signals in the green and red channels.
-Illumina Miseq and Hiseq instruemnts use four-color encoding, and bases A and C are principally found in the red channel while bases T and G are read out in the green channel.
- For example, if only samples with index 701(TAAGGCGA) and 704(TCCTGAGC) were in a pool, during the first read of the index the machine would only detect samples in the green channel (base T for index 1 and base T for index 2).  This deprives the machine of color contrast that it requires to identify clusters and issue confident base calls.  We recommend choosing indexes for samples that allow for at least one base in each channel per pool. For Nextera samples it is also important to achieve red-green channel balance for both the i7 and i5 index mixtures separately. 
+Illumina Miseq and Hiseq instruments use four-color encoding, and bases A and C are principally found in the red channel while bases T and G are read out in the green channel.
+ For example, if only samples with index 701(TAAGGCGA) and 704(TCCTGAGC) were in a pool, during the first read of the index the machine would only detect samples in the green channel (base T for index 1 and base T for index 2).  This deprives the machine of the color contrast that it requires to identify clusters and issue confident base calls.  We recommend choosing indexes for samples that allow for at least one base in each channel per pool. For Nextera libraries it is also important to achieve red-green channel balance for both the i7 and i5 index mixtures separately. 
 
 \subsubsection{PCR Amplification}
 It is critical to use the full amount of recommended input DNA at this step to ensure libraries that produce high quality sequencing results. 
 
 \subsection{Final Library Quantification}
 
-The molarity and library size are critical for sucessful clustering and sequencing.  Figure 2 shows examples of Bionalayzer scans of completed library types. Illumina recommends that completed libraries achieve a molarity of at least 2~nM or greater in order to be sequenced with quality results.  It is important to remove any primer-dimers that may be present. Primer-dimers will be visible on a Bioanalyzer electropherogram between bases 0-100 depending on the length of PCR primers you are using. If primer-dimers are present use a 1X ratio of AMPure XP Beads to remove them. To assess the quality of the completed library, we recommend the following protocol:
+The molarity and library size are critical for successful clustering and sequencing.  Figure 2 shows examples of Bioanalayzer scans of completed library types. Illumina recommends that completed libraries achieve a molarity of at least 2~nM or greater in order to be sequenced with quality results.  It is important to remove any primer-dimers that may be present. Primer-dimers will be visible on a Bioanalyzer electropherogram between bases 0-100 depending on the length of PCR primers you are using. If primer-dimers are present use a 1X ratio of AMPure XP Beads to remove them. To assess the quality of the completed library, we recommend the following protocol:
 \begin{enumerate}
-\item{1.      Use the Qubit Fluorometer to determine the concentration of libraries in ng/ul. As referenced above.}
-\item{2.      Use the Agilent 2100 Bioanalyzer to determine the library insert size and length. As referenced above.}
-\item{3.      Use the concentration from the Qubit and peak base pair size generated by the Bioanalyzer to calculate the molarity of the sample with the equation provided above.}
-\item{4.      The libraries are considered complete and ready for Illumina sequencing if the molarity is 2~nM or greater.}
+\item{      Use the Qubit Fluorometer to determine the concentration of libraries in ng/ul, as referenced above.}
+\item{      Use the Agilent 2100 Bioanalyzer to determine the library insert size and length. As referenced above.}
+\item{      Use the concentration from the Qubit and peak base pair size generated by the Bioanalyzer to calculate the molarity of the sample with the equation provided above.}
+\item{      The libraries are considered complete and ready for Illumina sequencing if the molarity is 2~nM or greater.}
 \end{enumerate}
 
 \begin{figure}
 %\sidecaption[t]
-\caption{Bioanalyzer traces of complete libraries. Panel a shows a TruSeq library with a narrow range peaking around 1kb. Panel b shows a a TruSeq library with a narrow range peaking around 360~bp. Panel c shows a TruSeq library with a narrow range peaking around 700~bp. Panel d shows a TruSeq library with a broad range peaking around 450. Panel e shows a Nextera library peaking around 1,600~bp.  }
+\caption{Bioanalyzer traces of complete libraries. Panel a shows a TruSeq library with a narrow range peaking around 1kb. Panel b shows a a TruSeq library with a narrow range peaking around 360~bp. Panel c shows a TruSeq library with a narrow range peaking around 700~bp. Panel d shows a TruSeq library with a broad range peaking around 450~bp. Panel e shows a Nextera library peaking around 1,600~bp.  }
 \includegraphics[width=12cm]{imgs/ABCD.eps}
 \includegraphics[width=6cm]{imgs/image6.eps}
 %
@@ -385,41 +390,41 @@ The molarity and library size are critical for sucessful clustering and sequenci
 Nucleic acid sequences determined from environmental samples are difficult to interpret for a variety of reasons, and as a result exploitation of metagenomic shotgun data is computationally expensive compared to the study of model organisms.
 Some parts of microbial genomes evolve quickly and make detection of similarity technically difficult.
 Many environmental microbes and microbial genes lack close relatives in cultured organisms, resulting in large fractions of many environmental samples going unannotated.
-Environmental samples present a formidable inference problem of unraveling unknown mixtures of unknown organisms.  When this problem has been approached, expectation-maximization has been the algorithmic workhorse.
+Environmental samples present a formidable inference problem of unraveling unknown mixtures of anonymous organisms.  When this problem has been approached, expectation-maximization has been the algorithmic workhorse.
 Unlike the sequencing of reference organisms, where the complexity of the sequence is limited by the genome of the underlying organism, environmental samples sometimes show diversity whose limits have not yet been circumscribed by observations.  This exceedingly high observed sequence diversity makes some datasets fail to compress, and exposes the annotation procedure to gigabases of raw data for annotation.
 
-High-throughput sequencing datasets of typical size ($10^{8}--10^{11}~$bp) too large for routine handling by general-purpose desktop and laptop computers.  These datasets are also too large for BLAST--faster, presumably less sensitive algorithms are the only choice for tens of millions of reads at a time; BLAST is affordable only for value-added sequences, not raw short-read data.
+High-throughput sequencing datasets of typical size ($10^{8}--10^{11}~$bp) are too large for routine handling by general-purpose desktop and laptop computers.  These datasets are also too large for BLAST--faster, presumably less sensitive algorithms are the only choice for tens of millions of reads at a time; BLAST is affordable only for value-added sequences, not raw short-read data.
 
 \subsection{Open and closed}
-The analysis of both targeted-gene and shotgun sequencing can proceed according to two general approaches, depending on whether inferences about the sequence content of the samples depend on the databases used for comparison and interpretation.  These approaches are called closed-reference and open-reference.  Open reference approaches are presumably more powerful, but involve unknown sample-dependent biases that cause the completeness of the analytical representation of the sequences to vary.
+The analysis of both targeted-gene and shotgun sequencing can proceed according to two general approaches, depending on whether inferences about the sequence content of the samples depend on the databases used for comparison and interpretation.  These approaches are called closed-reference and open-reference.  Open-reference approaches are presumably more powerful, but involve unknown sample-dependent biases that cause the completeness of the analytical representation of the sequences to vary.
 
 Comparing new sequence data to a database of sequences or sequence signatures is called "closed-reference annotation."  Closed-reference annotation has the advantages that datasets annotated using the same procedure can be reliably compared because the space of possible annotations is limited and can be known in advance.
 Experience has shown that DNA recruitment of environmental samples to the genomes of all cultivated organisms often explains low (10-50\%) fractions of the dataset, leaving 50-90\% of environmental shotgun sequences without recognizable similarity to database sequences.
 
 % (XXXX PIPELINE REVIEW, or at least pipeline list)  (MG-RAST, HUMANN, MEGAN, imicrobe, IMG/M, CAMERA... )
 
-Constructing sequence hypotheses from the data and performing a database-comparison annotation on value-added sequences is called open reference annotation.   For targeted gene sequencing, the sequence hypotheses are clusters constructed from the observed data; for shotgun sequencing sequencing hypotheses are usually the products of sequence assembly of the shotgun data.   Unlike closed-reference annotation, open-reference annotation can discover and describe sequence patterns present in the data but not in the database.  Open-reference annotation is more technically difficult and suffers from uncharacterized biases in the sequence construction phase, and difficulty in interpretation of the results.  The sequences resulting from assembly, called contigs, are longer and can contain both complete genes and chains of genes from the same organism, permitting better resolution when comparing to databases and allowing analysis of synteny in metagenomic data.
+Constructing sequence hypotheses from the data and performing a database-comparison annotation on value-added sequences is called open reference annotation.   For targeted gene sequencing, the sequence hypotheses are clusters constructed from the observed data; for shotgun sequencing, hypotheses are usually the products of sequence assembly of the shotgun data.   Unlike closed-reference annotation, open-reference annotation can discover and describe sequence patterns present in the data but not in the database.  Open-reference annotation is more technically tricky and suffers from uncharacterized biases in the sequence construction phase, and difficulty in interpretation of the results.  The sequences resulting from assembly, called contigs, are longer and can contain both complete genes and chains of genes from the same organism, permitting better resolution when comparing to databases and allowing analysis of synteny in metagenomic data.
 
 The increased value of the sequences in open-reference annotation, however, comes with added analytical complexity.   
 The collection of all the assembled contigs is always an incomplete summary of the metagenomic dataset, and contigs are not of equal importance in light of the sequence data.
 Contigs vary both in length and in depth, and the effects of this heterogeneity, which depends on uncontrolled properties of the sample and its biological diversity, on analysis are as yet unexplored.
 
-The growing nature of the set of reference sequences in open-reference (assembly-based) analysis of shotgun metagenomic data means that sequences are typically analyzed in batches using defined sets of reference sequences, and comparisons of sample sets between batches with different sets of references are not straightforward.
+The growing nature of the set of reference sequences in open-reference (assembly-based) analysis of shotgun metagenomic data means that sequences are typically analyzed in batches using defined sets of reference sequences, and comparisons of sample sets between lots with different sets of references are not straightforward.
 
 \subsection{Analysis Workflow overview}
         To address artifacts associated with sequencing technology and to improve ultimate signal-to-noise, metagenomic data are subjected to a number of sequence-level filters before assembly or annotation.  These preprocessing steps remove uninformative sequences, correct low-level errors, and discard sequence subsets enriched in errors.
 
         Removal of known sequence contaminants or positive control spikes is computationally straightforward when the contaminating sequences are known.   Samples of host-associated microbes may contain varying amounts of host DNA, and the varying host content of the samples (or perhaps other host characteristics) represent an unwanted, potentially confounding signal in the genetic analysis of microbial community composition.  Reads are compared to the reference genome with a fast read aligner (bwa and bowtie2 are the current state of the art) and reads that match are excluded from further analysis.   Fecal samples from humans and animals, samples of wounds, and plant-associated sampling are all subject to this sort of confounding from host-organism contamination. 
 
-        Current sequencing platforms each have platform-specific artificial sequences which are part of the sequencing technology.  These include PCR primers,  barcodes, and linker sequences that are ligated onto the sequences of interest.
-For some protocols, these sequences are intended to appear in the output, but in the standard Illumina single-end and paired-end protocols, adapter sequences in the sequence output are a symptom of poorly-executed sequencing library preparation, either bad sequence size selection or survival of primer dimers to the sequencing stage.
-These contaminants can include as few as 30~bp and as much as 150~bp of distinct sequence.   Removing these "adapter" sequences is not computationally expensive, but there are no generally accepted guidelines on how much contamination is acceptable.  Contamination ranges from minimal, affecting less than $10^-5$ of reads in a dataset, to as much as half of some sequence datasets; $10^{-3}$ is typical. 
+        Current sequencing technologies each have platform-specific artificial sequences which are part of the sequencing technology.  These include PCR primers,  barcodes, and linker sequences that are ligated onto the sequences of interest.
+For some protocols, these sequences are intended to appear in the output, but in the standard Illumina single-end and paired-end protocols, adapter sequences in the sequence output are a symptom of poorly-executed sequencing library preparation, either bad sequence size selection or survival of primer-dimers to the sequencing stage.
+These contaminants can include as few as 30~bp and as much as 150~bp of distinct sequence.   Removing these "adapter" sequences is not computationally expensive, but there are no generally accepted guidelines on how much contamination is acceptable.  Contamination ranges from minimal, affecting less than $10^{-5}$ of reads in a dataset, to as much as half of some sequence datasets; $10^{-3}$ is typical. 
 Adapter sequences are a bigger problem for assembly than for recruitment or annotation.
 
 \subsection{The human factor}
-Just as with laboratory technicians, bioinformatic data processing requires people with specialized skills.  The bioinformatic handling of any sort of sequencing data requires computational competency, including familiarity with transport, storage, and format conversion of large data files; managment of maintainable workflows; ability to navigate sequence archives for sets of relevant reference sequences; and teh ability to replicate computational workflows described in the literature, which requires installing and troubleshooting software.
+Just as with laboratory technicians, bioinformatic data processing requires people with specialized skills.  The bioinformatic handling of any sort of sequencing data requires computational competency, including familiarity with transport, storage, and format conversion of large data files; management of maintainable workflows; ability to navigate sequence archives for sets of relevant reference sequences; and the ability to replicate computational workflows described in the literature, which requires installing and troubleshooting software.
 
-Researchers usually get better results by sharing research goals, hypotheses, and prior information with the specialists, both in the wetlab and on the computational end.  In order to suggest or apply procedures in the wetlab or in the computer lab to attenuate unwanted, contaminating DNA or sequences tecnicans need to know what signals are interesting, and what likely uninformative signals look like.  These specialists cannot help you if you give them DNA and sample numbers and no further instructions.  
+Researchers usually get better results by sharing research goals, hypotheses, and prior information with the specialists, both in the wetlab and on the computational end.  In order to suggest or apply procedures in the wetlab or in the computer lab to attenuate unwanted, contaminating DNA or sequences technicians need to know what signals are interesting, and what likely uninformative signals look like.  These specialists cannot help you if you give them DNA and sample numbers and no further instructions.  
 
 \section{Reporting }
 \label{sec:5}
